@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated": "2026-10-25",
-  "source": "1. Lê Mới Em. Danh mục tài liệu ClinPharmAI (20 trang HTML trong thư mục pages/). Khoa Dược, BVĐK Phương Nam; 2026. Tiêu đề lấy nguyên văn từ thẻ <title> của từng trang.",
+  "source": "1. Lê Mới Em. Danh mục tài liệu ClinPharmAI (22 trang HTML trong thư mục pages/). Khoa Dược, BVĐK Phương Nam; 2026. Tiêu đề lấy nguyên văn từ thẻ <title> của từng trang.",
   "status": "unverified",
   "groups": [
     { "id": "guideline", "label": "Tóm tắt guideline", "icon": "book" },
@@ -15,10 +15,12 @@
     { "id": "ada-easd-2026-dtd2", "group": "guideline", "label": "ADA/EASD 2026 – Đái tháo đường típ 2", "org": "ADA/EASD", "year": 2026, "specialty": "Nội tiết", "file": "ada-easd-2026-dai-thao-duong-tip-2.html", "title": "Đồng Thuận ADA/EASD 2026 - Quản Lý Đái Tháo Đường Típ 2" },
     { "id": "aha-2026-ckm", "group": "guideline", "label": "AHA/ACC/ADA/ASN 2026 – Hội chứng CKM", "org": "AHA/ACC/ADA/ASN", "year": 2026, "specialty": "Tim mạch – Thận – Chuyển hóa", "file": "aha-acc-ada-ckm-syndrome-2026.html", "title": "2026 AHA/ACC/ADA/ASN CKM Syndrome Guideline - Visual Clinical Hub" },
     { "id": "ash-2026-thieu-sat", "group": "guideline", "label": "ASH 2026 – Thiếu sắt", "org": "ASH", "year": 2026, "specialty": "Huyết học", "file": "ash-2026-iron-deficiency.html", "title": "2026 ASH Iron Deficiency Guideline - Visual Clinical Hub" },
+    { "id": "eau-2026-uti", "group": "guideline", "label": "EAU 2026 – Nhiễm khuẩn niệu khoa", "org": "EAU", "year": 2026, "specialty": "Truyền nhiễm", "file": "EAU-2026-UTI-3.3-3.9-tom-tat.html", "title": "EAU 2026 – Nhiễm khuẩn niệu khoa (UTI 3.3–3.9)" },
     { "id": "esc-2026-suy-tim", "group": "guideline", "label": "ESC 2026 – Suy tim", "org": "ESC", "year": 2026, "specialty": "Tim mạch", "file": "cap-nhat-esc-2026-suy-tim.html", "title": "ESC Heart Failure Guidelines - Infographic & Analytics Dashboard" },
     { "id": "gina-2026-hen", "group": "guideline", "label": "GINA 2026 – Hen (chương 3–4)", "org": "GINA", "year": 2026, "specialty": "Hô hấp", "file": "GINA-2026-Ch3-4-tom-tat.html", "title": "GINA 2026 – Điều trị hen người lớn, thanh thiếu niên và trẻ 6–11 tuổi" },
     { "id": "dtd-2023-2026", "group": "guideline", "label": "Đái tháo đường 2023–2026 – Bảo vệ cơ quan", "org": "Tổng hợp", "year": 2026, "specialty": "Nội tiết", "file": "guideline-dai-thao-duong-2023-2026.html", "title": "Bảo vệ cơ quan thay dần HbA1c trong guideline đái tháo đường 2023–2026" },
     { "id": "idsa-2026-gram-am", "group": "guideline", "label": "IDSA 2026 – Gram âm kháng thuốc", "org": "IDSA", "year": 2026, "specialty": "Truyền nhiễm", "file": "idsa-2026-gram-am-khang-thuoc.html", "title": "Hướng dẫn IDSA 2026: Phác đồ Kháng sinh Ưu tiên & Thay thế" },
+    { "id": "kdigo-2026-aki-akd", "group": "guideline", "label": "KDIGO AKI/AKD (dự thảo 03/2026)", "org": "KDIGO", "year": 2026, "specialty": "Thận", "file": "KDIGO-AKI-AKD-2026-Ch3-4-tom-tat.html", "title": "KDIGO AKI/AKD (dự thảo 03/2026) – Chương 3 và 4: phòng ngừa, điều trị và AKI do thuốc" },
     { "id": "ssti-s-aureus", "group": "guideline", "label": "Nhiễm trùng da mô mềm do S. aureus", "org": "Infographic", "year": null, "specialty": "Truyền nhiễm", "file": "nhiem-trung-da-mo-mem-staphylococcus-aureus.html", "title": "Infographic: Chẩn Đoán & Điều Trị Nhiễm Trùng Da do S. aureus (SSTIs)" },
     { "id": "bexsero", "group": "thuoc", "label": "Bexsero", "org": "Tài liệu thông tin thuốc", "year": null, "specialty": "Vắc xin", "file": "Bexsero_Tai_lieu_thong_tin_thuoc.html", "title": "Bexsero – Tài liệu thông tin thuốc" },
     { "id": "lipitor", "group": "thuoc", "label": "Lipitor", "org": "Tài liệu thông tin thuốc", "year": null, "specialty": "Tim mạch", "file": "Lipitor_Tai_lieu_thong_tin_thuoc.html", "title": "Lipitor - Tài liệu thông tin thuốc" },

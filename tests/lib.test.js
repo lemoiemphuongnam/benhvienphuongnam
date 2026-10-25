@@ -34,6 +34,16 @@ t('nhiều từ khoá phải cùng khớp ("statin tim mach")', () =>
   assert.deepStrictEqual(L.search(R, 'statin tim mach').map(r => r.id), ['ss-statin']));
 t('khớp theo tổ chức ("idsa")', () =>
   assert.deepStrictEqual(L.search(R, 'idsa').map(r => r.id), ['idsa-2026-gram-am']));
+t('"nhiem khuan nieu" tìm thấy EAU 2026', () =>
+  assert.deepStrictEqual(L.search(R, 'nhiem khuan nieu').map(r => r.id), ['eau-2026-uti']));
+t('"aki" và "KDIGO" tìm thấy KDIGO AKI/AKD', () => {
+  assert.deepStrictEqual(L.search(R, 'aki').map(r => r.id), ['kdigo-2026-aki-akd']);
+  assert.deepStrictEqual(L.search(R, 'KDIGO').map(r => r.id), ['kdigo-2026-aki-akd']);
+});
+t('nhóm guideline có 12 tài liệu, tổng 22', () => {
+  assert.strictEqual(R.filter(r => r.group === 'guideline').length, 12);
+  assert.strictEqual(R.length, 22);
+});
 t('không khớp trả mảng rỗng', () => assert.strictEqual(L.search(R, 'zzzz khong co').length, 0));
 t('records rỗng/undefined không lỗi', () => {
   assert.deepStrictEqual(L.search([], 'a'), []);
