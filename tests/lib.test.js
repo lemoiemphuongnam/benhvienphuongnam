@@ -71,6 +71,16 @@ t('#/yeu-thich và #/gioi-thieu', () => {
   assert.strictEqual(L.parseRoute('#/yeu-thich').name, 'favorites');
   assert.strictEqual(L.parseRoute('#/gioi-thieu').name, 'about');
 });
+t('#/thu-vien và #/gan-day', () => {
+  assert.deepStrictEqual(L.parseRoute('#/thu-vien'), { name: 'library' });
+  assert.deepStrictEqual(L.parseRoute('#/gan-day'), { name: 'recent' });
+});
+t('chỉ KDIGO mang cờ dự thảo', () =>
+  assert.deepStrictEqual(R.filter(r => r.draft === true).map(r => r.id), ['kdigo-2026-aki-akd']));
+t('gợi ý tìm nhanh ở trang chủ đều có kết quả', () => {
+  ['suy tim', 'gram am', 'dai thao duong', 'aki', 'statin'].forEach(q =>
+    assert.ok(L.search(R, q).length > 0, q));
+});
 t('#/doc thiếu id là notfound', () => assert.strictEqual(L.parseRoute('#/doc').name, 'notfound'));
 t('mã hoá % hỏng không làm sập', () => assert.deepStrictEqual(L.parseRoute('#/doc/%E0%A4'), { name: 'doc', id: '%E0%A4' }));
 

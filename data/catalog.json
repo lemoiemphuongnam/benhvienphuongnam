@@ -1,5 +1,5 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "updated": "2026-10-25",
   "source": "1. Lê Mới Em. Danh mục tài liệu Cẩm nang Dược lâm sàng (22 trang HTML trong thư mục pages/). Khoa Dược, BV X; 2026. Tiêu đề lấy nguyên văn từ thẻ <title> của từng trang.",
   "status": "unverified",
@@ -20,7 +20,7 @@
     { "id": "gina-2026-hen", "group": "guideline", "label": "GINA 2026 – Hen (chương 3–4)", "org": "GINA", "year": 2026, "specialty": "Hô hấp", "file": "GINA-2026-Ch3-4-tom-tat.html", "title": "GINA 2026 – Điều trị hen người lớn, thanh thiếu niên và trẻ 6–11 tuổi" },
     { "id": "dtd-2023-2026", "group": "guideline", "label": "Đái tháo đường 2023–2026 – Bảo vệ cơ quan", "org": "Tổng hợp", "year": 2026, "specialty": "Nội tiết", "file": "guideline-dai-thao-duong-2023-2026.html", "title": "Bảo vệ cơ quan thay dần HbA1c trong guideline đái tháo đường 2023–2026" },
     { "id": "idsa-2026-gram-am", "group": "guideline", "label": "IDSA 2026 – Gram âm kháng thuốc", "org": "IDSA", "year": 2026, "specialty": "Truyền nhiễm", "file": "idsa-2026-gram-am-khang-thuoc.html", "title": "Hướng dẫn IDSA 2026: Phác đồ Kháng sinh Ưu tiên & Thay thế" },
-    { "id": "kdigo-2026-aki-akd", "group": "guideline", "label": "KDIGO AKI/AKD (dự thảo 03/2026)", "org": "KDIGO", "year": 2026, "specialty": "Thận", "file": "KDIGO-AKI-AKD-2026-Ch3-4-tom-tat.html", "title": "KDIGO AKI/AKD (dự thảo 03/2026) – Chương 3 và 4: phòng ngừa, điều trị và AKI do thuốc" },
+    { "id": "kdigo-2026-aki-akd", "group": "guideline", "label": "KDIGO AKI/AKD (dự thảo 03/2026)", "org": "KDIGO", "year": 2026, "specialty": "Thận", "draft": true, "file": "KDIGO-AKI-AKD-2026-Ch3-4-tom-tat.html", "title": "KDIGO AKI/AKD (dự thảo 03/2026) – Chương 3 và 4: phòng ngừa, điều trị và AKI do thuốc" },
     { "id": "ssti-s-aureus", "group": "guideline", "label": "Nhiễm trùng da mô mềm do S. aureus", "org": "Infographic", "year": null, "specialty": "Truyền nhiễm", "file": "nhiem-trung-da-mo-mem-staphylococcus-aureus.html", "title": "Infographic: Chẩn Đoán & Điều Trị Nhiễm Trùng Da do S. aureus (SSTIs)" },
     { "id": "bexsero", "group": "thuoc", "label": "Bexsero", "org": "Tài liệu thông tin thuốc", "year": null, "specialty": "Vắc xin", "file": "Bexsero_Tai_lieu_thong_tin_thuoc.html", "title": "Bexsero – Tài liệu thông tin thuốc" },
     { "id": "lipitor", "group": "thuoc", "label": "Lipitor", "org": "Tài liệu thông tin thuốc", "year": null, "specialty": "Tim mạch", "file": "Lipitor_Tai_lieu_thong_tin_thuoc.html", "title": "Lipitor - Tài liệu thông tin thuốc" },

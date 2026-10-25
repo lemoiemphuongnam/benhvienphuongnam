@@ -43,7 +43,7 @@
     return out;
   }
 
-  // Định tuyến theo hash: '#/', '#/doc/<id>', '#/nhom/<id>', '#/yeu-thich', '#/gioi-thieu'.
+  // Định tuyến theo hash: '#/', '#/doc/<id>', '#/nhom/<id>', '#/thu-vien', '#/gan-day', '#/yeu-thich', '#/gioi-thieu'.
   function parseRoute(hash) {
     var h = String(hash || '').replace(/^#\/?/, '');
     var parts = h.split('/').filter(Boolean).map(function (p) {
@@ -52,6 +52,8 @@
     if (!parts.length) return { name: 'home' };
     if (parts[0] === 'doc' && parts[1]) return { name: 'doc', id: parts[1] };
     if (parts[0] === 'nhom' && parts[1]) return { name: 'group', id: parts[1] };
+    if (parts[0] === 'thu-vien') return { name: 'library' };
+    if (parts[0] === 'gan-day') return { name: 'recent' };
     if (parts[0] === 'yeu-thich') return { name: 'favorites' };
     if (parts[0] === 'gioi-thieu') return { name: 'about' };
     return { name: 'notfound', raw: h };
