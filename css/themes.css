@@ -1,0 +1,15 @@
+/* Lớp theme theo đơn vị: chỉ đổi màu nhấn. Tên/logo đổi trong js/app.js (UNITS). */
+:root[data-unit="clinpharmai"] { --accent: #0a8f9b; --accent-ink: #ffffff; }
+/* Phương Nam: màu mận theo bộ nhận diện navy + mận (mã màu chưa đối chiếu logo gốc) */
+:root[data-unit="phuong-nam"] { --accent: #7a2e5c; --accent-ink: #ffffff; }
+/* Phương Châu: màu tạm, CHƯA có bộ nhận diện gốc để đối chiếu */
+:root[data-unit="phuong-chau"] { --accent: #0b6e4f; --accent-ink: #ffffff; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"])[data-unit="phuong-nam"] { --accent: #d07aab; --accent-ink: #1a0a14; }
+  :root:not([data-theme="light"])[data-unit="phuong-chau"] { --accent: #4fc79a; --accent-ink: #062016; }
+  :root:not([data-theme="light"])[data-unit="clinpharmai"] { --accent: #3cc4cf; --accent-ink: #04191b; }
+}
+:root[data-theme="dark"][data-unit="phuong-nam"] { --accent: #d07aab; --accent-ink: #1a0a14; }
+:root[data-theme="dark"][data-unit="phuong-chau"] { --accent: #4fc79a; --accent-ink: #062016; }
+:root[data-theme="dark"][data-unit="clinpharmai"] { --accent: #3cc4cf; --accent-ink: #04191b; }

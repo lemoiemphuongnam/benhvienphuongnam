@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi" data-unit="phuong-nam">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ClinPharmAI Portal</title>
+<meta name="description" content="Cổng tra cứu tài liệu dược lâm sàng: tóm tắt guideline, thông tin thuốc, so sánh dược lý, thẩm định EBM.">
+<meta name="theme-color" content="#f2f5fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151f33" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/themes.css">
+<script>
+  // Áp theme đã lưu trước khi vẽ để tránh nháy màu.
+  (function () {
+    try {
+      var t = localStorage.getItem('cpai.theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      var u = localStorage.getItem('cpai.unit'); if (u) document.documentElement.setAttribute('data-unit', u);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20v-3"/><path d="M8 7h8M8 11h6"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/><path d="m15 10-2 2 2 2"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Bỏ qua tới nội dung</a>
+
+<div class="app" id="app">
+  <aside class="sb" id="sidebar" aria-label="Thanh điều hướng">
+    <div class="sb-head">
+      <a class="brand" href="#/" aria-label="Về trang chủ">
+        <span class="brand-logo" id="brand-logo" aria-hidden="true">CP</span>
+        <span class="brand-txt">
+          <span class="brand-name">ClinPharmAI</span>
+          <span class="brand-unit" id="brand-unit">Khoa Dược</span>
+        </span>
+      </a>
+      <button class="icon-btn" id="btn-collapse" type="button" aria-label="Thu gọn thanh bên" title="Thu gọn / mở rộng (Ctrl+B)"><svg class="ico"><use href="#i-panel"/></svg></button>
+      <button class="icon-btn sb-close" id="btn-close" type="button" aria-label="Đóng thanh bên"><svg class="ico"><use href="#i-x"/></svg></button>
+    </div>
+
+    <div class="sb-search" id="search-box" role="search">
+      <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
+      <label for="q" class="sr-only">Tìm tài liệu</label>
+      <input id="q" type="search" placeholder="Tìm tài liệu (không cần dấu)" autocomplete="off" spellcheck="false" enterkeyhint="go">
+      <kbd aria-hidden="true">/</kbd>
+      <button class="icon-btn clear" id="q-clear" type="button" aria-label="Xoá từ khoá"><svg class="ico"><use href="#i-x"/></svg></button>
+    </div>
+
+    <nav class="sb-nav" id="nav" aria-label="Danh mục tài liệu"></nav>
+
+    <div class="sb-foot">
+      <a class="nav-item" href="#/gioi-thieu" data-route="about"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span class="lbl">Giới thiệu &amp; lưu ý</span></a>
+      <div class="sb-row">
+        <button class="icon-btn" id="btn-theme" type="button" aria-label="Đổi giao diện sáng/tối" title="Giao diện: theo hệ thống"><svg class="ico"><use href="#i-auto"/></svg></button>
+        <label for="unit">Đơn vị</label>
+        <select id="unit">
+          <option value="phuong-nam">BVĐK Phương Nam</option>
+          <option value="phuong-chau">Phương Châu</option>
+          <option value="clinpharmai">ClinPharmAI (lõi)</option>
+        </select>
+      </div>
+      <div class="sb-meta" id="data-meta">Đang tải danh mục…</div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="btn-menu" type="button" aria-label="Mở thanh bên" aria-controls="sidebar" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
+      <div class="crumb">
+        <span class="crumb-grp" id="crumb-grp">ClinPharmAI</span>
+        <span class="crumb-title" id="crumb-title" aria-live="polite">Trang chủ</span>
+      </div>
+      <span class="pill-off" id="pill-off" hidden>Ngoại tuyến</span>
+      <div class="top-actions" id="doc-actions" hidden>
+        <button class="icon-btn" id="btn-prev" type="button" aria-label="Tài liệu trước trong nhóm"><svg class="ico"><use href="#i-left"/></svg></button>
+        <button class="icon-btn" id="btn-next" type="button" aria-label="Tài liệu sau trong nhóm"><svg class="ico"><use href="#i-right"/></svg></button>
+        <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false" aria-label="Thêm vào yêu thích"><svg class="ico"><use href="#i-star"/></svg></button>
+        <a class="icon-btn" id="btn-open" href="#" target="_blank" rel="noopener" aria-label="Mở tài liệu trong tab mới" title="Mở trong tab mới"><svg class="ico"><use href="#i-external"/></svg></a>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="view" id="view-page" aria-labelledby="page-h"></section>
+      <section class="view viewer" id="view-doc" hidden>
+        <div class="loadbar" aria-hidden="true"></div>
+        <iframe id="frame" title="Tài liệu" referrerpolicy="no-referrer"></iframe>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden>
+  <span>Đã có bản cập nhật mới.</span>
+  <button type="button" id="btn-update">Tải lại</button>
+</div>
+
+<noscript><p style="padding:16px">Cần bật JavaScript để dùng cổng tài liệu. Có thể mở trực tiếp các tệp trong thư mục <code>pages/</code>.</p></noscript>
+
+<script src="js/lib.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

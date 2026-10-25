@@ -1,0 +1,17 @@
+{
+  "name": "ClinPharmAI Portal – Cổng tài liệu dược lâm sàng",
+  "short_name": "ClinPharmAI",
+  "description": "Tra cứu tóm tắt guideline, thông tin thuốc, so sánh dược lý, thẩm định EBM.",
+  "lang": "vi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f5fa",
+  "theme_color": "#7a2e5c",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
