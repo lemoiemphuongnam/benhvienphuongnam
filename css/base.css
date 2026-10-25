@@ -1,4 +1,4 @@
-/* ClinPharmAI Portal – lõi giao diện. Token lấy từ :root của trang ClinPharmAI (so-sanh-macrolid). */
+/* Cẩm nang Dược lâm sàng – lõi giao diện. Token lấy từ :root của trang ClinPharmAI (so-sanh-macrolid). */
 :root {
   --font: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --text-body: 14.5px; --text-small: 13px; --text-heading: 16.5px;
@@ -67,13 +67,11 @@ a { color: var(--blue); }
 }
 .sb-head { display: flex; align-items: center; gap: 10px; padding: 12px 12px 10px; min-height: var(--top-h); }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; color: inherit; text-decoration: none; border-radius: 10px; }
-.brand-logo {
-  width: 36px; height: 36px; border-radius: 10px; flex: none; display: grid; place-items: center;
-  background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 13px; letter-spacing: .3px;
-}
+.brand-logo { width: 40px; height: 40px; border-radius: 10px; flex: none; display: block; }
 .brand-txt { min-width: 0; line-height: 1.2; }
-.brand-name { font-weight: 800; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.brand-unit { font-size: 12px; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand-name { display: block; line-height: 1.15; }
+.brand-kicker { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); }
+.brand-main { display: block; font-size: 16px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }.brand-unit { display: block; margin-top: 2px; font-size: 12px; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .icon-btn {
   width: 40px; height: 40px; flex: none; display: inline-grid; place-items: center;
   border: 1px solid transparent; border-radius: 10px; background: transparent; cursor: pointer; color: var(--mut);
@@ -128,10 +126,7 @@ button.nav-title:hover { background: var(--card2); color: var(--tx); }
 
 .sb-foot { border-top: 1px solid var(--line); padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
 .sb-row { display: flex; align-items: center; gap: 8px; }
-.sb-row label { font-size: 12px; color: var(--dim); white-space: nowrap; }
-.sb-row select {
-  flex: 1; min-width: 0; height: 36px; border-radius: 9px; border: 1px solid var(--line); background: var(--bg2); padding: 0 8px;
-}
+.sb-row-lbl { font-size: 12.5px; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sb-meta { font-size: 11.5px; color: var(--dim); line-height: 1.4; }
 
 /* Thu gọn thành thanh biểu tượng (máy tính) */
@@ -143,8 +138,7 @@ button.nav-title:hover { background: var(--card2); color: var(--tx); }
   .app[data-sb="rail"] .nav-item .lbl,
   .app[data-sb="rail"] .nav-item .badge,
   .app[data-sb="rail"] .nav-sec.docs,
-  .app[data-sb="rail"] .sb-row label,
-  .app[data-sb="rail"] .sb-row select,
+  .app[data-sb="rail"] .sb-row-lbl,
   .app[data-sb="rail"] .sb-meta { display: none; }
   .app[data-sb="rail"] .sb-head { flex-direction: column; padding: 10px 0; gap: 6px; }
   .app[data-sb="rail"] .brand { flex: none; }

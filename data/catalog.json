@@ -1,7 +1,7 @@
 {
-  "version": "1.1.0",
+  "version": "1.1.1",
   "updated": "2026-10-25",
-  "source": "1. Lê Mới Em. Danh mục tài liệu ClinPharmAI (22 trang HTML trong thư mục pages/). Khoa Dược, BVĐK Phương Nam; 2026. Tiêu đề lấy nguyên văn từ thẻ <title> của từng trang.",
+  "source": "1. Lê Mới Em. Danh mục tài liệu Cẩm nang Dược lâm sàng (22 trang HTML trong thư mục pages/). Khoa Dược, BV X; 2026. Tiêu đề lấy nguyên văn từ thẻ <title> của từng trang.",
   "status": "unverified",
   "groups": [
     { "id": "guideline", "label": "Tóm tắt guideline", "icon": "book" },

@@ -1,4 +1,4 @@
-/* ClinPharmAI Portal – giao diện: sidebar, định tuyến, khung xem tài liệu. Logic thuần ở js/lib.js. */
+/* Cẩm nang Dược lâm sàng – giao diện: sidebar, định tuyến, khung xem tài liệu. Logic thuần ở js/lib.js. */
 (function () {
   'use strict';
   var L = window.PortalLib;
@@ -7,11 +7,7 @@
   var app = $('app');
   var DESKTOP = window.matchMedia('(min-width: 900px)');
 
-  var UNITS = {
-    'phuong-nam': { short: 'PN', unit: 'Khoa Dược · BVĐK Phương Nam' },
-    'phuong-chau': { short: 'PC', unit: 'Khoa Dược · Phương Châu' },
-    'clinpharmai': { short: 'CP', unit: 'Cổng tài liệu dược lâm sàng' }
-  };
+  var APP_NAME = 'Cẩm nang Dược lâm sàng';
   var GROUP_ICON = { book: 'i-book', pill: 'i-pill', scale: 'i-scale', flask: 'i-flask' };
   var THEMES = ['auto', 'light', 'dark'];
   var THEME_LABEL = { auto: 'theo hệ thống', light: 'sáng', dark: 'tối' };
@@ -158,7 +154,7 @@
     var list = state.records.filter(function (r) { return !state.specialty || r.specialty === state.specialty; });
 
     var html = '<div class="wrap">' +
-      '<div class="hero"><h1 id="page-h">Cổng tài liệu dược lâm sàng</h1>' +
+      '<div class="hero"><h1 id="page-h">' + esc(APP_NAME) + '</h1>' +
       '<p>Tra cứu nhanh tóm tắt guideline, tài liệu thông tin thuốc, so sánh dược lý và thẩm định bài báo. Dùng thanh bên trái để chuyển tài liệu; gõ <b>/</b> để tìm.</p>' +
       '<div class="stats">' + state.groups.map(function (g) {
         return '<a class="stat" href="#/nhom/' + g.id + '" style="text-decoration:none;color:inherit"><b>' +
@@ -204,7 +200,7 @@
     var c = state.cat;
     return '<div class="wrap"><div class="prose">' +
       '<h2 id="page-h">Giới thiệu</h2>' +
-      '<p>ClinPharmAI Portal gom các trang tài liệu HTML của Khoa Dược vào một ứng dụng có thanh điều hướng bên trái, tìm kiếm không dấu và dùng được ngoại tuyến sau lần mở đầu tiên (PWA).</p>' +
+      '<p><b>Cẩm nang Dược lâm sàng</b> (Khoa Dược – BV X) gom các trang tài liệu HTML của Khoa Dược vào một ứng dụng có thanh điều hướng bên trái, tìm kiếm không dấu và dùng được ngoại tuyến sau lần mở đầu tiên (PWA).</p>' +
       '<h2>Lưu ý chuyên môn</h2>' +
       '<p><span class="badge-unv">Chưa kiểm chứng</span> Cổng không sửa nội dung các trang gốc. Nội dung chuyên môn trong từng trang <b>chưa được thẩm định lại</b> khi đưa vào cổng; mỗi trang có nguồn riêng ở cuối trang. Khi áp dụng cho người bệnh cần đối chiếu nguồn gốc, và nên có thêm một dược sĩ hoặc bác sĩ khác rà soát.</p>' +
       privacyNote() +
@@ -273,7 +269,7 @@
   function setCrumb(grp, title) {
     $('crumb-grp').textContent = grp;
     $('crumb-title').textContent = title;
-    document.title = (title === 'Trang chủ' ? '' : title + ' · ') + 'ClinPharmAI Portal';
+    document.title = (title === 'Trang chủ' ? '' : title + ' · ') + APP_NAME;
   }
 
   function render() {
@@ -297,7 +293,7 @@
 
     viewDoc.hidden = true;
     page.hidden = false;
-    var title = 'Trang chủ', grp = 'ClinPharmAI';
+    var title = 'Trang chủ', grp = APP_NAME;
     if (r.name === 'home') page.innerHTML = pageHome();
     else if (r.name === 'group') {
       page.innerHTML = pageGroup(r.id);
@@ -349,14 +345,7 @@
     b.querySelector('use').setAttribute('href', '#' + THEME_ICON[t]);
     b.title = 'Giao diện: ' + THEME_LABEL[t];
     b.setAttribute('aria-label', 'Đổi giao diện (hiện tại: ' + THEME_LABEL[t] + ')');
-  }
-  function applyUnit(u) {
-    if (!UNITS[u]) u = 'phuong-nam';
-    root.setAttribute('data-unit', u);
-    $('unit').value = u;
-    $('brand-logo').textContent = UNITS[u].short;
-    $('brand-unit').textContent = UNITS[u].unit;
-    return u;
+    $('theme-lbl').textContent = 'Giao diện: ' + THEME_LABEL[t];
   }
 
   /* ---------- Sự kiện ---------- */
@@ -438,7 +427,6 @@
     applyTheme(next);
     saveRaw('cpai.theme', next === 'auto' ? null : next);
   });
-  $('unit').addEventListener('change', function (e) { saveRaw('cpai.unit', applyUnit(e.target.value)); });
 
   document.addEventListener('keydown', function (e) {
     var typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '') || (e.target && e.target.isContentEditable);
@@ -501,9 +489,7 @@
   var savedTheme = null;
   try { savedTheme = localStorage.getItem('cpai.theme'); } catch (e) {}
   applyTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'auto');
-  var savedUnit = null;
-  try { savedUnit = localStorage.getItem('cpai.unit'); } catch (e) {}
-  applyUnit(savedUnit || root.getAttribute('data-unit'));
+  saveRaw('cpai.unit', null);   // dọn tuỳ chọn đơn vị của bản 1.0 (đã bỏ bộ chọn đơn vị)
   if (DESKTOP.matches && load('cpai.rail', false) === true) setRail(true);
   syncInert();
   syncOnline();

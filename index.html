@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="vi" data-unit="phuong-nam">
+<html lang="vi" data-unit="bv-x">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ClinPharmAI Portal</title>
-<meta name="description" content="Cổng tra cứu tài liệu dược lâm sàng: tóm tắt guideline, thông tin thuốc, so sánh dược lý, thẩm định EBM.">
+<title>Cẩm nang Dược lâm sàng</title>
+<meta name="description" content="Cẩm nang Dược lâm sàng – Khoa Dược, BV X: tóm tắt guideline, thông tin thuốc, so sánh dược lý, thẩm định EBM.">
 <meta name="theme-color" content="#f2f5fa" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#151f33" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.webmanifest">
@@ -20,7 +20,6 @@
   (function () {
     try {
       var t = localStorage.getItem('cpai.theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-      var u = localStorage.getItem('cpai.unit'); if (u) document.documentElement.setAttribute('data-unit', u);
     } catch (e) {}
   })();
 </script>
@@ -55,10 +54,10 @@
   <aside class="sb" id="sidebar" aria-label="Thanh điều hướng">
     <div class="sb-head">
       <a class="brand" href="#/" aria-label="Về trang chủ">
-        <span class="brand-logo" id="brand-logo" aria-hidden="true">CP</span>
+        <img class="brand-logo" src="icons/icon.svg" width="40" height="40" alt="">
         <span class="brand-txt">
-          <span class="brand-name">ClinPharmAI</span>
-          <span class="brand-unit" id="brand-unit">Khoa Dược</span>
+          <span class="brand-name"><span class="brand-kicker">Cẩm nang</span> <span class="brand-main">Dược lâm sàng</span></span>
+          <span class="brand-unit">Khoa Dược – BV X</span>
         </span>
       </a>
       <button class="icon-btn" id="btn-collapse" type="button" aria-label="Thu gọn thanh bên" title="Thu gọn / mở rộng (Ctrl+B)"><svg class="ico"><use href="#i-panel"/></svg></button>
@@ -79,12 +78,7 @@
       <a class="nav-item" href="#/gioi-thieu" data-route="about"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span class="lbl">Giới thiệu &amp; lưu ý</span></a>
       <div class="sb-row">
         <button class="icon-btn" id="btn-theme" type="button" aria-label="Đổi giao diện sáng/tối" title="Giao diện: theo hệ thống"><svg class="ico"><use href="#i-auto"/></svg></button>
-        <label for="unit">Đơn vị</label>
-        <select id="unit">
-          <option value="phuong-nam">BVĐK Phương Nam</option>
-          <option value="phuong-chau">Phương Châu</option>
-          <option value="clinpharmai">ClinPharmAI (lõi)</option>
-        </select>
+        <span class="sb-row-lbl" id="theme-lbl">Giao diện: theo hệ thống</span>
       </div>
       <div class="sb-meta" id="data-meta">Đang tải danh mục…</div>
     </div>
@@ -95,7 +89,7 @@
     <header class="topbar">
       <button class="icon-btn menu-btn" id="btn-menu" type="button" aria-label="Mở thanh bên" aria-controls="sidebar" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
       <div class="crumb">
-        <span class="crumb-grp" id="crumb-grp">ClinPharmAI</span>
+        <span class="crumb-grp" id="crumb-grp">Cẩm nang Dược lâm sàng</span>
         <span class="crumb-title" id="crumb-title" aria-live="polite">Trang chủ</span>
       </div>
       <span class="pill-off" id="pill-off" hidden>Ngoại tuyến</span>

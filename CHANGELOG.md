@@ -1,5 +1,12 @@
 # Nhật ký thay đổi
 
+## 1.2.0 – 2026-10-25
+
+- Đổi tên ứng dụng thành **Cẩm nang Dược lâm sàng** (tên ngắn trên màn hình chính: "Cẩm nang Dược"), khớp tên miền `camnangduoclamsang.netlify.app`.
+- Đơn vị hiển thị: **Khoa Dược – BV X**. Bỏ bộ chọn đơn vị (Phương Nam, Phương Châu); màu nhấn BV X đặt trong `css/themes.css`.
+- Logo mới: sách mở + viên nang, nền xanh dương → xanh ngọc; SVG và PNG (192, 512, maskable, apple-touch) sinh bằng `tools/make-icons.js`.
+- Danh mục 1.1.1 (chỉ đổi trường `source`); `CACHE_VERSION` v1.2.0.
+
 ## 1.1.0 – 2026-10-25
 
 - Thêm 2 tài liệu vào nhóm Tóm tắt guideline (tổng 12 guideline, 22 tài liệu):

@@ -1,4 +1,4 @@
-/* ClinPharmAI Portal – hàm thuần (không đụng DOM), dùng chung cho trình duyệt và Node test. */
+/* Cẩm nang Dược lâm sàng – hàm thuần (không đụng DOM), dùng chung cho trình duyệt và Node test. */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else root.PortalLib = factory();

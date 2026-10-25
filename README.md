@@ -1,6 +1,8 @@
-# ClinPharmAI Portal
+# Cẩm nang Dược lâm sàng
 
-Cổng tra cứu tài liệu dược lâm sàng của Khoa Dược: gom 20 trang HTML (tóm tắt guideline, tài liệu thông tin thuốc, so sánh dược lý, thẩm định EBM) vào một ứng dụng web có **thanh điều hướng bên trái**, tìm kiếm không dấu và dùng được **ngoại tuyến** (PWA).
+<img src="icons/icon.svg" width="72" height="72" alt="Logo Cẩm nang Dược lâm sàng">
+
+Cổng tra cứu tài liệu dược lâm sàng của **Khoa Dược – BV X**: gom 22 trang HTML (tóm tắt guideline, tài liệu thông tin thuốc, so sánh dược lý, thẩm định EBM) vào một ứng dụng web có **thanh điều hướng bên trái**, tìm kiếm không dấu và dùng được **ngoại tuyến** (PWA).
 
 > **Lưu ý chuyên môn.** Cổng không sửa nội dung các trang gốc. Nội dung chuyên môn trong từng trang **chưa được thẩm định lại** khi đưa vào cổng; đối chiếu nguồn gốc ở cuối mỗi trang trước khi áp dụng cho người bệnh.
 >
@@ -13,7 +15,11 @@ Cổng tra cứu tài liệu dược lâm sàng của Khoa Dược: gom 20 trang
 - Tìm kiếm không phân biệt dấu (`/` hoặc `Ctrl+K`, `Enter` mở kết quả đầu tiên), tô sáng từ khoá.
 - Khung xem tài liệu: tài liệu trước/sau trong nhóm (`Alt+←/→`), ghim yêu thích, mở tab mới.
 - Lọc theo chuyên khoa ở trang chủ.
-- Giao diện sáng/tối/theo hệ thống; theme theo đơn vị (Phương Nam, Phương Châu, lõi ClinPharmAI).
+- Giao diện sáng/tối/theo hệ thống; màu nhấn theo đơn vị đặt trong `css/themes.css` (hiện là BV X).
+
+## Logo
+
+Cuốn sách mở (cẩm nang, kiến thức có nguồn) và viên nang nghiêng phía trên (dược), trên nền chuyển màu xanh dương → xanh ngọc (tin cậy, chăm sóc lâm sàng). Logo vẽ bằng mã trong `tools/make-icons.js`; sửa hình học ở đó rồi chạy `node tools/make-icons.js` để sinh lại SVG và PNG.
 - PWA: cài như ứng dụng, lưu sẵn 20 trang để đọc khi mất mạng, báo khi có bản cập nhật.
 
 ## Cấu trúc
