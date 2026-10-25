@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cẩm nang Dược lâm sàng</title>
 <meta name="description" content="Cẩm nang Dược lâm sàng – Khoa Dược, BV X: tóm tắt guideline, thông tin thuốc, so sánh dược lý, thẩm định EBM.">
-<meta name="theme-color" content="#f2f5fa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#151f33" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1424" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/themes.css">
 <script>
@@ -29,6 +29,7 @@
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20v-3"/><path d="M8 7h8M8 11h6"/></symbol>
+  <symbol id="i-library" viewBox="0 0 24 24"><path d="M4 4h4v16H4zM10 4h4v16h-4z"/><path d="m16 5 3.8-1 2.2 15.6-3.8 1z"/></symbol>
   <symbol id="i-pill" viewBox="0 0 24 24"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/></symbol>
   <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></symbol>
   <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></symbol>
@@ -53,33 +54,26 @@
 <div class="app" id="app">
   <aside class="sb" id="sidebar" aria-label="Thanh điều hướng">
     <div class="sb-head">
-      <a class="brand" href="#/" aria-label="Về trang chủ">
-        <img class="brand-logo" src="icons/icon.svg" width="40" height="40" alt="">
+      <a class="brand" href="#/" aria-label="Cẩm nang Dược lâm sàng – về trang chủ">
+        <img class="brand-logo" src="icons/icon.svg" width="36" height="36" alt="">
         <span class="brand-txt">
-          <span class="brand-name"><span class="brand-kicker">Cẩm nang</span> <span class="brand-main">Dược lâm sàng</span></span>
+          <span class="brand-name">Cẩm nang Dược lâm sàng</span>
           <span class="brand-unit">Khoa Dược – BV X</span>
         </span>
       </a>
-      <button class="icon-btn" id="btn-collapse" type="button" aria-label="Thu gọn thanh bên" title="Thu gọn / mở rộng (Ctrl+B)"><svg class="ico"><use href="#i-panel"/></svg></button>
       <button class="icon-btn sb-close" id="btn-close" type="button" aria-label="Đóng thanh bên"><svg class="ico"><use href="#i-x"/></svg></button>
     </div>
 
-    <div class="sb-search" id="search-box" role="search">
-      <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
-      <label for="q" class="sr-only">Tìm tài liệu</label>
-      <input id="q" type="search" placeholder="Tìm tài liệu (không cần dấu)" autocomplete="off" spellcheck="false" enterkeyhint="go">
-      <kbd aria-hidden="true">/</kbd>
-      <button class="icon-btn clear" id="q-clear" type="button" aria-label="Xoá từ khoá"><svg class="ico"><use href="#i-x"/></svg></button>
-    </div>
+    <button class="quick" id="btn-quick" type="button" aria-haspopup="dialog" title="Tìm nhanh (Ctrl+K)">
+      <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span class="lbl">Tìm nhanh</span><kbd aria-hidden="true">Ctrl K</kbd>
+    </button>
 
     <nav class="sb-nav" id="nav" aria-label="Danh mục tài liệu"></nav>
 
     <div class="sb-foot">
-      <a class="nav-item" href="#/gioi-thieu" data-route="about"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span class="lbl">Giới thiệu &amp; lưu ý</span></a>
-      <div class="sb-row">
-        <button class="icon-btn" id="btn-theme" type="button" aria-label="Đổi giao diện sáng/tối" title="Giao diện: theo hệ thống"><svg class="ico"><use href="#i-auto"/></svg></button>
-        <span class="sb-row-lbl" id="theme-lbl">Giao diện: theo hệ thống</span>
-      </div>
+      <a class="it" href="#/gioi-thieu" data-route="about"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span class="lbl">Giới thiệu &amp; lưu ý</span></a>
+      <button class="it" id="btn-theme" type="button" aria-label="Đổi giao diện sáng/tối"><svg class="ico" aria-hidden="true"><use href="#i-auto"/></svg><span class="lbl" id="theme-lbl">Giao diện: theo hệ thống</span></button>
+      <button class="it" id="btn-collapse" type="button" aria-label="Thu gọn thanh bên" title="Thu gọn / mở rộng (Ctrl+B)"><svg class="ico" aria-hidden="true"><use href="#i-panel"/></svg><span class="lbl">Thu gọn thanh bên</span></button>
       <div class="sb-meta" id="data-meta">Đang tải danh mục…</div>
     </div>
   </aside>
@@ -88,26 +82,45 @@
   <div class="main">
     <header class="topbar">
       <button class="icon-btn menu-btn" id="btn-menu" type="button" aria-label="Mở thanh bên" aria-controls="sidebar" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
-      <div class="crumb">
-        <span class="crumb-grp" id="crumb-grp">Cẩm nang Dược lâm sàng</span>
-        <span class="crumb-title" id="crumb-title" aria-live="polite">Trang chủ</span>
-      </div>
+      <nav class="crumb" id="crumb" aria-label="Vị trí hiện tại"></nav>
       <span class="pill-off" id="pill-off" hidden>Ngoại tuyến</span>
       <div class="top-actions" id="doc-actions" hidden>
         <button class="icon-btn" id="btn-prev" type="button" aria-label="Tài liệu trước trong nhóm"><svg class="ico"><use href="#i-left"/></svg></button>
         <button class="icon-btn" id="btn-next" type="button" aria-label="Tài liệu sau trong nhóm"><svg class="ico"><use href="#i-right"/></svg></button>
-        <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false" aria-label="Thêm vào yêu thích"><svg class="ico"><use href="#i-star"/></svg></button>
+        <button class="icon-btn fav-btn" id="btn-fav" type="button" aria-pressed="false" aria-label="Thêm vào yêu thích"><svg class="ico"><use href="#i-star"/></svg></button>
         <a class="icon-btn" id="btn-open" href="#" target="_blank" rel="noopener" aria-label="Mở tài liệu trong tab mới" title="Mở trong tab mới"><svg class="ico"><use href="#i-external"/></svg></a>
       </div>
     </header>
 
     <main id="main" tabindex="-1">
       <section class="view" id="view-page" aria-labelledby="page-h"></section>
-      <section class="view viewer" id="view-doc" hidden>
+      <section class="view viewer" id="view-doc" aria-label="Khung đọc tài liệu" hidden>
         <div class="loadbar" aria-hidden="true"></div>
+        <div class="docbar" id="docbar"></div>
         <iframe id="frame" title="Tài liệu" referrerpolicy="no-referrer"></iframe>
       </section>
     </main>
+
+    <nav class="tabbar" id="tabbar" aria-label="Điều hướng nhanh">
+      <a href="#/" data-tab="home"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg><span>Trang chủ</span></a>
+      <a href="#/thu-vien" data-tab="library"><svg class="ico" aria-hidden="true"><use href="#i-library"/></svg><span>Thư viện</span></a>
+      <button type="button" data-tab="search" id="tab-search" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span>Tìm</span></button>
+      <a href="#/yeu-thich" data-tab="favorites"><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><span>Yêu thích</span></a>
+    </nav>
+  </div>
+</div>
+
+<div class="pal" id="pal" hidden>
+  <div class="pal-scrim" data-close></div>
+  <div class="pal-box" role="dialog" aria-modal="true" aria-label="Tìm nhanh tài liệu">
+    <div class="pal-in">
+      <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="pal-q" type="search" placeholder="Tìm theo tên thuốc, bệnh, tổ chức, chuyên khoa…" autocomplete="off" spellcheck="false"
+        role="combobox" aria-expanded="true" aria-controls="pal-list" aria-autocomplete="list" enterkeyhint="go">
+      <button class="icon-btn" type="button" data-close aria-label="Đóng tìm nhanh"><svg class="ico"><use href="#i-x"/></svg></button>
+    </div>
+    <ul class="pal-list" id="pal-list" role="listbox" aria-label="Kết quả"></ul>
+    <div class="pal-foot"><span><kbd>↑</kbd><kbd>↓</kbd> chọn</span><span><kbd>Enter</kbd> mở</span><span><kbd>Esc</kbd> đóng</span></div>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 /* Cẩm nang Dược lâm sàng – service worker.
    Tăng CACHE_VERSION mỗi lần đổi tệp giao diện, danh mục hoặc trang trong pages/. */
 'use strict';
-var CACHE_VERSION = 'v1.2.0';
+var CACHE_VERSION = 'v1.3.0';
 var SHELL = 'cpai-shell-' + CACHE_VERSION;
 var RUNTIME = 'cpai-runtime-' + CACHE_VERSION;
 

@@ -1,5 +1,17 @@
 # Nhật ký thay đổi
 
+## 1.3.0 – 2026-10-25
+
+- Giao diện mới theo mẫu **A. Tĩnh & Tập trung** (người dùng duyệt từ 3 mẫu trong `design/de-xuat-ui-ux.html`):
+  - Sidebar dạng cây: mỗi nhóm xuất hiện một lần, có chấm màu riêng; thêm mục Gần đây; nút thu gọn chuyển xuống chân sidebar để tên ứng dụng hiện đủ một dòng.
+  - Trang chủ: "Hôm nay cần tra cứu gì?", ô tìm lớn lọc thư viện tức thì, gợi ý nhanh, "Đọc tiếp", thư viện dạng bảng; tiêu đề đầy đủ chỉ hiện khi khác nhãn.
+  - Tìm nhanh `Ctrl+K` (hộp thoại có điều hướng bàn phím, khoá nền, trả tiêu điểm khi đóng).
+  - Trang mới: Thư viện (lọc theo nhóm), Gần đây.
+  - Điện thoại: thanh dưới 4 mục; "Đọc tiếp" thành dải vuốt ngang.
+  - Khung đọc: thanh trạng thái "Chưa thẩm định lại", "Dự thảo", nguồn.
+- Danh mục 1.2.0: KDIGO AKI/AKD có `draft: true`. `CACHE_VERSION` v1.3.0.
+- Kiểm tra: 37/37 ca kiểm thử, check-catalog, validate_cdss ĐẠT; mở thật ở 1366 px (sáng), 1280 px (tối), 375 px; không cuộn ngang, không lỗi console.
+
 ## 1.2.0 – 2026-10-25
 
 - Đổi tên ứng dụng thành **Cẩm nang Dược lâm sàng** (tên ngắn trên màn hình chính: "Cẩm nang Dược"), khớp tên miền `camnangduoclamsang.netlify.app`.

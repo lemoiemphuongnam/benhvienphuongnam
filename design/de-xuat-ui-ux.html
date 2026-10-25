@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đề xuất UI/UX – Cẩm nang Dược lâm sàng</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Lora:wght@500;600;700&display=swap">
+<style>
+:root{--ink:#0f1729;--mut:#4a5670;--line:#d9e0ea;--bg:#eef1f6;--card:#fff;--brand:#0b7c86;--blue:#164aa2;
+  --f:'Be Vietnam Pro',system-ui,sans-serif;--serif:'Lora',Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f);color:var(--ink);background:var(--bg);line-height:1.5}
+.ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.page{max-width:1320px;margin:0 auto;padding:24px 16px 64px}
+header.doc{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+header.doc img{width:48px;height:48px;border-radius:12px}
+header.doc h1{margin:0;font-size:22px;line-height:1.25}
+header.doc p{margin:2px 0 0;color:var(--mut);font-size:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px}
+.box h2{margin:0 0 10px;font-size:17px}
+.audit{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.issue{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.issue b{display:block;margin-bottom:2px}
+.sev{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:99px;margin-right:6px}
+.sev.s3{background:#fde2e2;color:#8b1d1d}.sev.s2{background:#fdf0cc;color:#6b4b06}.sev.s1{background:#e3ebf7;color:#2a4472}
+.src{font-size:12px;color:var(--mut);margin-top:10px}
+.tabs{position:sticky;top:0;z-index:20;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;background:var(--bg)}
+.tabs button{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 16px;font:600 14px var(--f);cursor:pointer;color:var(--ink);text-align:left}
+.tabs button small{display:block;font-weight:500;color:var(--mut);font-size:12px}
+.tabs button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabs button[aria-selected="true"] small{color:#c9d3e6}
+.opt[hidden]{display:none}
+.opt-head{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin:8px 0 16px}
+.opt-head h2{margin:0 0 6px;font-size:21px}
+.opt-head .lead{margin:0 0 10px;color:var(--mut)}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13.5px}
+.pc ul{margin:4px 0 0;padding-left:18px}.pc li{margin-bottom:3px}
+.pc h3{margin:0;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut)}
+.swatches{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.sw{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mut)}
+.sw i{width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.08)}
+.stage{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.lbl{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;margin:0 0 6px}
+.dwrap{flex:1 1 640px;min-width:0}
+.mwrap{flex:0 0 auto}
+.scaler{position:relative;width:100%;overflow:hidden;border-radius:14px;box-shadow:0 20px 50px rgba(15,23,41,.18)}
+.desk{width:1200px;height:740px;transform-origin:0 0;position:absolute;left:0;top:0;overflow:hidden;background:#fff}
+.phone{width:375px;height:760px;border-radius:40px;border:10px solid #0f1729;overflow:hidden;position:relative;box-shadow:0 20px 50px rgba(15,23,41,.22);background:#fff}
+.cmp{width:100%;border-collapse:collapse;font-size:13.5px}
+.cmp th,.cmp td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.cmp th{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut)}
+.common li{margin-bottom:4px;font-size:14px}
+@media(max-width:900px){.opt-head,.pc{grid-template-columns:1fr}.tabs{flex-wrap:nowrap;overflow-x:auto}.tabs button{flex:none}}
+
+/* ============ MẪU A – Tĩnh & Tập trung ============ */
+.A{font-family:var(--f);color:#111827;display:flex;height:100%;background:#fff}
+.A .sb{width:252px;border-right:1px solid #eceff3;display:flex;flex-direction:column;padding:14px 12px;gap:4px;background:#fbfbfc}
+.A .brand{display:flex;gap:10px;align-items:center;padding:4px 6px 12px}
+.A .brand img{width:34px;height:34px;border-radius:9px}
+.A .brand b{display:block;font-size:14px;line-height:1.2}.A .brand span{font-size:11.5px;color:#6b7280}
+.A .k{display:flex;align-items:center;gap:8px;height:36px;border:1px solid #e5e7eb;border-radius:9px;padding:0 10px;color:#6b7280;font-size:13px;background:#fff;margin-bottom:10px}
+.A .k kbd{margin-left:auto;font:600 11px var(--f);border:1px solid #e5e7eb;border-radius:5px;padding:0 5px;color:#6b7280}
+.A .it{display:flex;align-items:center;gap:10px;height:34px;padding:0 10px;border-radius:8px;font-size:13.5px;color:#374151}
+.A .it.on{background:#eef6f7;color:#0b5f67;font-weight:700}
+.A .it .n{margin-left:auto;font-size:12px;color:#9ca3af}
+.A .sec{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9ca3af;padding:14px 10px 4px}
+.A .dot{width:8px;height:8px;border-radius:50%}
+.A .tree{margin:2px 0 4px 23px;border-left:1px solid #e5e7eb;padding-left:10px}
+.A .tree div{font-size:12.5px;color:#4b5563;padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.A .tree .on{color:#0b5f67;font-weight:600}
+.A .foot{margin-top:auto;border-top:1px solid #eceff3;padding-top:8px}
+.A .main{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.A .top{height:52px;border-bottom:1px solid #eceff3;display:flex;align-items:center;padding:0 24px;font-size:13px;color:#6b7280;gap:6px}
+.A .top b{color:#111827}
+.A .body{padding:34px 48px;overflow:hidden}
+.A h1{font-size:28px;margin:0 0 4px;letter-spacing:-.4px}
+.A .sub{color:#6b7280;margin:0 0 18px;font-size:14px}
+.A .search{display:flex;align-items:center;gap:10px;height:52px;border:1.5px solid #0b7c86;border-radius:14px;padding:0 16px;font-size:15px;color:#9ca3af;box-shadow:0 0 0 5px rgba(11,124,134,.09);max-width:720px}
+.A .search kbd{margin-left:auto;font:600 12px var(--f);border:1px solid #e5e7eb;border-radius:6px;padding:1px 7px;color:#6b7280}
+.A .sugg{display:flex;gap:8px;margin:12px 0 28px;flex-wrap:wrap}
+.A .sugg span{font-size:12.5px;padding:5px 12px;border-radius:99px;background:#f3f4f6;color:#374151}
+.A .h2{display:flex;align-items:baseline;gap:8px;margin:0 0 10px}
+.A .h2 b{font-size:15px}.A .h2 span{font-size:12.5px;color:#9ca3af}
+.A .cont{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+.A .cc{border:1px solid #eceff3;border-radius:12px;padding:12px 14px}
+.A .cc .t{font-size:11.5px;color:#6b7280;display:flex;align-items:center;gap:6px}
+.A .cc b{display:block;font-size:14px;margin:4px 0 8px}
+.A .bar{height:4px;background:#eef1f4;border-radius:4px}.A .bar i{display:block;height:100%;border-radius:4px;background:#0b7c86}
+.A table{width:100%;border-collapse:collapse;font-size:13px}
+.A th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#9ca3af;text-align:left;padding:6px 8px;border-bottom:1px solid #eceff3}
+.A td{padding:9px 8px;border-bottom:1px solid #f3f4f6;color:#374151}
+.A td b{color:#111827;font-weight:600}
+.A .pill{font-size:11.5px;padding:2px 8px;border-radius:99px;font-weight:600}
+.A .note{margin-top:14px;font-size:12px;color:#6b7280;display:flex;gap:8px;align-items:center}
+.A .note u{color:#0b5f67;text-decoration:none;font-weight:600}
+/* A mobile */
+.Am{height:100%;display:flex;flex-direction:column;font-family:var(--f);background:#fff;color:#111827}
+.Am .st{height:40px}
+.Am .hd{display:flex;align-items:center;gap:10px;padding:6px 18px 10px}
+.Am .hd img{width:30px;height:30px;border-radius:8px}.Am .hd b{font-size:15px}
+.Am .bd{flex:1;padding:8px 18px;overflow:hidden}
+.Am h1{font-size:23px;margin:6px 0 12px;letter-spacing:-.3px}
+.Am .search{display:flex;align-items:center;gap:8px;height:48px;border:1.5px solid #0b7c86;border-radius:14px;padding:0 14px;color:#9ca3af;font-size:14px}
+.Am .sugg{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 18px}
+.Am .sugg span{font-size:12px;padding:4px 11px;border-radius:99px;background:#f3f4f6}
+.Am .row{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #f1f2f4}
+.Am .row i{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:800}
+.Am .row b{display:block;font-size:13.5px;font-weight:600}.Am .row span{font-size:12px;color:#6b7280}
+.Am .tab{height:70px;border-top:1px solid #eceff3;display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:12px}
+.Am .tab div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10.5px;color:#9ca3af}
+.Am .tab .on{color:#0b7c86;font-weight:700}
+
+/* ============ MẪU B – Bảng điều khiển lâm sàng ============ */
+.B{font-family:var(--f);display:flex;height:100%;background:#eef2f8;color:#0f1729}
+.B .sb{width:248px;background:linear-gradient(180deg,#0f2a5c 0%,#0b3d57 100%);color:#d6e2f5;display:flex;flex-direction:column;padding:16px 12px;gap:3px}
+.B .brand{display:flex;gap:10px;align-items:center;padding:4px 6px 14px}
+.B .brand img{width:36px;height:36px;border-radius:10px;box-shadow:0 0 0 2px rgba(255,255,255,.15)}
+.B .brand b{display:block;color:#fff;font-size:14px;line-height:1.2}.B .brand span{font-size:11.5px;color:#9fb4d6}
+.B .k{display:flex;gap:8px;align-items:center;height:38px;border-radius:10px;background:rgba(255,255,255,.08);padding:0 12px;font-size:13px;color:#9fb4d6;margin-bottom:12px}
+.B .it{display:flex;gap:10px;align-items:center;height:38px;padding:0 12px;border-radius:10px;font-size:13.5px}
+.B .it.on{background:rgba(255,255,255,.14);color:#fff;font-weight:700;box-shadow:inset 3px 0 0 #5ee6d5}
+.B .it .n{margin-left:auto;font-size:11.5px;padding:1px 8px;border-radius:99px;background:rgba(255,255,255,.1)}
+.B .sec{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:#7f97bd;padding:14px 12px 4px;font-weight:700}
+.B .unit{margin-top:auto;background:rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;font-size:12px;color:#9fb4d6}
+.B .unit b{color:#fff;display:block;font-size:13px}
+.B .unv{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:99px;background:#fbbf24;color:#3b2a05}
+.B .main{flex:1;padding:22px 28px;overflow:hidden}
+.B .hdr{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.B .hdr h1{margin:0;font-size:22px}.B .hdr p{margin:0;font-size:13px;color:#5b6884}
+.B .hdr .s{margin-left:auto;display:flex;gap:8px;align-items:center;height:40px;width:330px;background:#fff;border-radius:12px;padding:0 14px;color:#8a96ad;font-size:13px;box-shadow:0 1px 2px rgba(15,23,41,.06)}
+.B .hdr .s kbd{margin-left:auto;font:600 11px var(--f);background:#eef2f8;border-radius:5px;padding:1px 6px}
+.B .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:118px;gap:14px}
+.B .c{background:#fff;border-radius:18px;padding:16px;box-shadow:0 1px 2px rgba(15,23,41,.05),0 8px 24px rgba(15,23,41,.05);position:relative;overflow:hidden}
+.B .hero{grid-column:span 2;grid-row:span 2;background:linear-gradient(135deg,#164aa2,#0b7c86);color:#fff;padding:22px}
+.B .hero .k2{font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;opacity:.8;font-weight:700}
+.B .hero h2{font-size:24px;margin:8px 0 6px;line-height:1.25}
+.B .hero p{margin:0;opacity:.85;font-size:13px}
+.B .hero .btn{position:absolute;left:22px;bottom:20px;background:#fff;color:#0f2a5c;font-weight:700;font-size:13px;padding:9px 16px;border-radius:10px}
+.B .hero .tags{position:absolute;right:20px;bottom:24px;display:flex;gap:6px}
+.B .hero .tags span{font-size:11px;padding:3px 9px;border-radius:99px;background:rgba(255,255,255,.18)}
+.B .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.B .stat .ic{width:36px;height:36px;border-radius:11px;display:grid;place-items:center}
+.B .stat b{display:block;font-size:28px;line-height:1;margin-top:12px}
+.B .stat span{font-size:12.5px;color:#5b6884}
+.B .stat .go{position:absolute;right:14px;top:16px;font-size:11px;color:#8a96ad}
+.B .wide{grid-column:span 2;grid-row:span 2}
+.B .c h3{margin:0 0 10px;font-size:14px;display:flex;align-items:center;gap:8px}
+.B .c h3 small{margin-left:auto;font-size:11.5px;color:#8a96ad;font-weight:500}
+.B .li{display:flex;gap:10px;align-items:center;padding:7px 0;border-top:1px solid #f0f3f8;font-size:13px}
+.B .li:first-of-type{border-top:0}
+.B .li i{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:800;flex:none}
+.B .li b{font-weight:600;display:block;font-size:13px}.B .li span{font-size:11.5px;color:#8a96ad}
+.B .li em{margin-left:auto;font-style:normal;font-size:11px;color:#8a96ad;white-space:nowrap}
+.B .chips{display:flex;flex-wrap:wrap;gap:6px}
+.B .chips span{font-size:12px;padding:5px 10px;border-radius:10px;background:#f2f5fa;color:#33405c}
+.B .chips span b{color:#0b7c86;margin-left:4px}
+.B .warn{grid-column:span 2;background:#fff8e6;box-shadow:none;border:1px solid #f6e3ad;font-size:12.5px;color:#6b4b06;display:flex;gap:10px;align-items:flex-start}
+/* B mobile */
+.Bm{height:100%;display:flex;flex-direction:column;font-family:var(--f);background:#eef2f8;color:#0f1729;position:relative}
+.Bm .top{background:linear-gradient(160deg,#0f2a5c,#0b5d6a);color:#fff;padding:44px 18px 22px;border-radius:0 0 26px 26px}
+.Bm .top .r{display:flex;align-items:center;gap:10px}
+.Bm .top img{width:32px;height:32px;border-radius:9px}
+.Bm .top b{font-size:15px}.Bm .top small{display:block;font-size:11px;color:#a9bfe0}
+.Bm .top .s{margin-top:16px;height:44px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;gap:8px;padding:0 14px;font-size:13.5px;color:#c8d7ef}
+.Bm .bd{padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.Bm .t{background:#fff;border-radius:16px;padding:12px;box-shadow:0 4px 14px rgba(15,23,41,.06)}
+.Bm .t .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center}
+.Bm .t b{display:block;font-size:22px;margin-top:8px;line-height:1}.Bm .t span{font-size:11.5px;color:#5b6884}
+.Bm .h{grid-column:span 2;background:linear-gradient(135deg,#164aa2,#0b7c86);color:#fff;border-radius:16px;padding:14px}
+.Bm .h small{font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;opacity:.8;font-weight:700}
+.Bm .h b{display:block;font-size:16px;margin:4px 0}.Bm .h span{font-size:12px;opacity:.85}
+.Bm .nav{position:absolute;left:16px;right:16px;bottom:16px;height:60px;border-radius:20px;background:#0f1729;display:grid;grid-template-columns:repeat(4,1fr);color:#8a96ad}
+.Bm .nav div{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;gap:2px}
+.Bm .nav .on{color:#5ee6d5;font-weight:700}
+
+/* ============ MẪU C – Thư viện đọc ============ */
+.C{font-family:var(--f);display:flex;height:100%;background:#f7f4ee;color:#1d2433}
+.C .rail{width:64px;background:#1d2433;display:flex;flex-direction:column;align-items:center;padding:14px 0;gap:6px;color:#8d97ab}
+.C .rail img{width:36px;height:36px;border-radius:10px;margin-bottom:12px}
+.C .rail div{width:42px;height:42px;border-radius:12px;display:grid;place-items:center}
+.C .rail .on{background:#2f3a52;color:#fff}
+.C .rail .sp{flex:1;background:none}
+.C .list{width:340px;border-right:1px solid #e6dfd2;display:flex;flex-direction:column;background:#fbf9f5}
+.C .lh{padding:18px 18px 10px}
+.C .lh small{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#8a7f6b;font-weight:700}
+.C .lh h2{margin:2px 0 10px;font-family:var(--serif);font-size:22px}
+.C .seg{display:flex;background:#efe9de;border-radius:10px;padding:3px;gap:2px;font-size:12px}
+.C .seg span{flex:1;text-align:center;padding:5px 0;border-radius:8px;color:#5f5646}
+.C .seg .on{background:#fff;color:#1d2433;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.C .ls{margin:10px 0 0;height:36px;border:1px solid #e6dfd2;border-radius:10px;display:flex;align-items:center;gap:8px;padding:0 12px;font-size:13px;color:#9a8f7b;background:#fff}
+.C .chips{display:flex;gap:6px;padding:10px 18px;flex-wrap:wrap}
+.C .chips span{font-size:11.5px;padding:3px 10px;border-radius:99px;border:1px solid #e6dfd2;color:#5f5646}
+.C .chips .on{background:#1d2433;color:#fff;border-color:#1d2433}
+.C .items{overflow:hidden;padding:0 10px}
+.C .itm{display:flex;gap:12px;padding:11px 10px;border-radius:12px;align-items:flex-start}
+.C .itm.on{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 6px 18px rgba(29,36,51,.06)}
+.C .mono{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:10.5px;font-weight:800;flex:none;letter-spacing:.2px}
+.C .itm b{display:block;font-size:13.5px;font-weight:600;line-height:1.3}
+.C .itm span{font-size:11.5px;color:#8a7f6b}
+.C .read{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.C .rh{padding:22px 34px 16px;border-bottom:1px solid #e6dfd2;background:#fbf9f5}
+.C .rh small{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#0b7c86;font-weight:700}
+.C .rh h1{font-family:var(--serif);font-size:28px;margin:4px 0 10px;line-height:1.2;max-width:640px}
+.C .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.C .b{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px}
+.C .act{margin-left:auto;display:flex;gap:6px}
+.C .act span{height:34px;padding:0 12px;border:1px solid #e6dfd2;border-radius:9px;display:flex;align-items:center;gap:6px;font-size:12.5px;background:#fff}
+.C .act .pri{background:#1d2433;color:#fff;border-color:#1d2433}
+.C .paper{flex:1;margin:18px 34px 0;background:#fff;border-radius:14px 14px 0 0;box-shadow:0 1px 2px rgba(0,0,0,.05),0 10px 30px rgba(29,36,51,.06);padding:22px 26px;overflow:hidden}
+.C .paper .tabsx{display:flex;gap:6px;margin-bottom:14px}
+.C .paper .tabsx span{font-size:12px;padding:5px 11px;border-radius:9px;background:#f3efe7;color:#5f5646}
+.C .paper .tabsx .on{background:#3730a3;color:#fff}
+.C .paper table{width:100%;border-collapse:collapse;font-size:12.5px}
+.C .paper th{background:#3730a3;color:#fff;text-align:left;padding:7px 8px;font-size:11.5px}
+.C .paper td{padding:8px;border-bottom:1px solid #eee8dc;color:#3a3f4d}
+.C .paper .cap{font-size:11px;color:#8a7f6b;margin-top:10px}
+/* C mobile */
+.Cm{height:100%;display:flex;flex-direction:column;font-family:var(--f);background:#fbf9f5;color:#1d2433}
+.Cm .hd{padding:46px 18px 8px;display:flex;align-items:center;gap:10px}
+.Cm .hd img{width:30px;height:30px;border-radius:8px}
+.Cm .hd h2{margin:0;font-family:var(--serif);font-size:21px}
+.Cm .seg{margin:6px 18px 0;display:flex;background:#efe9de;border-radius:10px;padding:3px;font-size:11.5px}
+.Cm .seg span{flex:1;text-align:center;padding:6px 0;border-radius:8px;color:#5f5646}
+.Cm .seg .on{background:#fff;color:#1d2433;font-weight:700}
+.Cm .ls{margin:10px 18px;height:40px;border:1px solid #e6dfd2;border-radius:11px;display:flex;align-items:center;gap:8px;padding:0 12px;font-size:13px;color:#9a8f7b;background:#fff}
+.Cm .items{padding:0 10px;flex:1;overflow:hidden}
+.Cm .itm{display:flex;gap:12px;padding:10px 8px;border-bottom:1px solid #efe9de;align-items:center}
+.Cm .itm b{display:block;font-size:13.5px;font-weight:600;line-height:1.3}.Cm .itm span{font-size:11.5px;color:#8a7f6b}
+.Cm .itm .chev{margin-left:auto;color:#b9ae99}
+.Cm .tab{height:66px;border-top:1px solid #e6dfd2;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;padding-bottom:10px}
+.Cm .tab div{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10.5px;color:#9a8f7b;gap:2px}
+.Cm .tab .on{color:#1d2433;font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20v-3"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+</svg>
+
+<div class="page">
+  <header class="doc">
+    <img src="../icons/icon.svg" alt="">
+    <div>
+      <h1>3 đề xuất UI/UX cho Cẩm nang Dược lâm sàng</h1>
+      <p>Bản xem trước tĩnh để duyệt hướng thiết kế, chưa áp dụng vào app. Dữ liệu là 22 tài liệu thật của app.</p>
+    </div>
+  </header>
+
+  <section class="box">
+    <h2>Rà soát giao diện hiện tại</h2>
+    <div class="audit">
+      <div class="issue"><b><span class="sev s3">Nặng</span>Điều hướng lặp</b>Sidebar có 32 mục; 4 nhóm xuất hiện 2 lần (mục trên cùng và tiêu đề danh sách). Kiến trúc thông tin: nhất quán, tối giản.</div>
+      <div class="issue"><b><span class="sev s3">Nặng</span>Nội dung chính bị đẩy xuống</b>Ở 784 px, khối giới thiệu cao tới px 410; thẻ tài liệu đầu tiên ở px 473. Nielsen #8: thẩm mỹ, tối giản.</div>
+      <div class="issue"><b><span class="sev s2">Vừa</span>Tìm kiếm khó thấy trên điện thoại</b>Ô tìm nằm trong ngăn kéo ẩn sau nút ☰. Don Norman: khả năng khám phá.</div>
+      <div class="issue"><b><span class="sev s2">Vừa</span>Thẻ lặp chữ</b>Nhãn và tiêu đề gần như trùng ("Lipitor" / "Lipitor – Tài liệu thông tin thuốc"), tốn chỗ, khó quét.</div>
+      <div class="issue"><b><span class="sev s2">Vừa</span>Trạng thái tài liệu chưa rõ khi đang đọc</b>Nhãn "Chưa kiểm chứng" chỉ ở chân sidebar; trang KDIGO là dự thảo nhưng khi đọc không thấy. Nielsen #1: hiển thị trạng thái.</div>
+      <div class="issue"><b><span class="sev s1">Nhẹ</span>Nhóm khó phân biệt</b>Mọi thẻ cùng màu, chỉ khác icon nhỏ. Thiết kế thị giác: mã hoá màu theo nhóm.</div>
+    </div>
+    <p class="src">Khung rà soát lấy từ repo mastepanoski/claude-skills (topic ux-ui-design): Nielsen 10 heuristics, WCAG 2.2, 7 nguyên tắc Don Norman, information-architecture-audit, ui-design-review.</p>
+  </section>
+
+  <section class="box">
+    <h2>Giữ chung cho cả 3 mẫu</h2>
+    <ul class="common">
+      <li>Sidebar trái vẫn là trục điều khiển chính trên máy tính; điện thoại có thanh điều hướng dưới đáy, ô tìm luôn lộ ra.</li>
+      <li>Mỗi nhóm điều hướng chỉ xuất hiện một lần; mỗi nhóm có một màu riêng (guideline chàm, thông tin thuốc xanh ngọc, so sánh hổ phách, EBM tím).</li>
+      <li>Khi đọc tài liệu luôn thấy nhãn trạng thái: "Chưa thẩm định lại", "Dự thảo" (nếu có), ngày cập nhật.</li>
+      <li>Tìm kiếm không dấu, phím tắt, chế độ tối, ngoại tuyến, logo và tên hiện tại giữ nguyên. Chữ đạt tương phản WCAG AA.</li>
+    </ul>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Chọn mẫu">
+    <button role="tab" aria-selected="true" data-o="A">A. Tĩnh &amp; Tập trung<small>Tìm trước, tối giản</small></button>
+    <button role="tab" aria-selected="false" data-o="B">B. Bảng điều khiển lâm sàng<small>Bento, sidebar xanh đậm</small></button>
+    <button role="tab" aria-selected="false" data-o="C">C. Thư viện đọc<small>Danh sách + khung đọc</small></button>
+  </div>
+
+  <!-- ================= A ================= -->
+  <section class="opt" id="opt-A">
+    <div class="opt-head">
+      <div>
+        <h2>A. Tĩnh &amp; Tập trung</h2>
+        <p class="lead">Lấy cảm hứng từ các công cụ làm việc tối giản: nền trắng, sidebar mảnh dạng cây, ô tìm lớn ở trung tâm. Người dùng vào là gõ ngay tên thuốc hoặc bệnh.</p>
+        <div class="swatches">
+          <span class="sw"><i style="background:#ffffff"></i>Nền trắng</span>
+          <span class="sw"><i style="background:#fbfbfc"></i>Sidebar</span>
+          <span class="sw"><i style="background:#0b7c86"></i>Nhấn xanh ngọc</span>
+          <span class="sw"><i style="background:#111827"></i>Chữ</span>
+        </div>
+      </div>
+      <div class="pc">
+        <div><h3>Điểm mạnh</h3><ul><li>Nhanh nhất cho tra cứu tại giường bệnh</li><li>Ít màu, dễ đọc lâu</li><li>Danh sách dạng bảng quét nhanh 22+ tài liệu</li></ul></div>
+        <div><h3>Đánh đổi</h3><ul><li>Ít "ấn tượng" khi trình chiếu</li><li>Khi số tài liệu lớn cần thêm bộ lọc</li></ul></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="dwrap"><p class="lbl">Máy tính · trang chủ</p><div class="scaler"><div class="desk">
+        <div class="A">
+          <aside class="sb">
+            <div class="brand"><img src="../icons/icon.svg" alt=""><div><b>Cẩm nang Dược lâm sàng</b><span>Khoa Dược – BV X</span></div></div>
+            <div class="k"><svg class="ico"><use href="#i-search"/></svg>Tìm nhanh<kbd>Ctrl K</kbd></div>
+            <div class="it on"><svg class="ico"><use href="#i-home"/></svg>Trang chủ</div>
+            <div class="it"><svg class="ico"><use href="#i-clock"/></svg>Gần đây</div>
+            <div class="it"><svg class="ico"><use href="#i-star"/></svg>Yêu thích<span class="n">1</span></div>
+            <div class="sec">Thư viện</div>
+            <div class="it"><i class="dot" style="background:#4f46e5"></i>Tóm tắt guideline<span class="n">12</span></div>
+            <div class="tree"><div>ACG 2026 – Xơ gan</div><div>EAU 2026 – Nhiễm khuẩn niệu</div><div class="on">KDIGO AKI/AKD (dự thảo)</div><div>ESC 2026 – Suy tim</div><div style="color:#9ca3af">+ 8 tài liệu</div></div>
+            <div class="it"><i class="dot" style="background:#0b7c86"></i>Thông tin thuốc<span class="n">3</span></div>
+            <div class="it"><i class="dot" style="background:#d97706"></i>So sánh dược lý<span class="n">5</span></div>
+            <div class="it"><i class="dot" style="background:#7c3aed"></i>Thẩm định EBM<span class="n">2</span></div>
+            <div class="foot"><div class="it"><svg class="ico"><use href="#i-info"/></svg>Giới thiệu &amp; lưu ý</div><div class="it"><svg class="ico"><use href="#i-moon"/></svg>Giao diện tối</div></div>
+          </aside>
+          <div class="main">
+            <div class="top">Cẩm nang Dược lâm sàng <span>/</span> <b>Trang chủ</b></div>
+            <div class="body">
+              <h1>Hôm nay cần tra cứu gì?</h1>
+              <p class="sub">22 tài liệu · tìm theo tên thuốc, bệnh, tổ chức hoặc chuyên khoa, không cần gõ dấu.</p>
+              <div class="search"><svg class="ico"><use href="#i-search"/></svg>Ví dụ: suy tim, meropenem, KDIGO…<kbd>/</kbd></div>
+              <div class="sugg"><span>Suy tim</span><span>Kháng sinh gram âm</span><span>Đái tháo đường típ 2</span><span>Tổn thương thận cấp</span><span>Statin</span></div>
+              <div class="h2"><b>Đọc tiếp</b><span>3 tài liệu gần nhất</span></div>
+              <div class="cont">
+                <div class="cc"><div class="t"><i class="dot" style="background:#4f46e5;width:7px;height:7px;border-radius:50%"></i>Tóm tắt guideline</div><b>KDIGO AKI/AKD (dự thảo 03/2026)</b><div class="t">Thận · KDIGO</div></div>
+                <div class="cc"><div class="t"><i style="background:#4f46e5;width:7px;height:7px;border-radius:50%"></i>Tóm tắt guideline</div><b>EAU 2026 – Nhiễm khuẩn niệu khoa</b><div class="t">Truyền nhiễm · EAU</div></div>
+                <div class="cc"><div class="t"><i style="background:#0b7c86;width:7px;height:7px;border-radius:50%"></i>Thông tin thuốc</div><b>Lipitor</b><div class="t">Tim mạch · Tài liệu hãng</div></div>
+              </div>
+              <div class="h2"><b>Thư viện</b><span>sắp theo cập nhật</span></div>
+              <table>
+                <thead><tr><th>Tài liệu</th><th>Nhóm</th><th>Chuyên khoa</th><th>Nguồn</th></tr></thead>
+                <tbody>
+                  <tr><td><b>KDIGO AKI/AKD</b> · Chương 3–4</td><td><span class="pill" style="background:#eef0ff;color:#3730a3">Guideline</span></td><td>Thận</td><td>KDIGO · dự thảo 2026</td></tr>
+                  <tr><td><b>EAU 2026</b> · Nhiễm khuẩn niệu khoa</td><td><span class="pill" style="background:#eef0ff;color:#3730a3">Guideline</span></td><td>Truyền nhiễm</td><td>EAU · 2026</td></tr>
+                  <tr><td><b>So sánh 5 PPI</b></td><td><span class="pill" style="background:#fff4e0;color:#8a4b06">So sánh</span></td><td>Tiêu hóa – Gan</td><td>ClinPharmAI</td></tr>
+                  <tr><td><b>Meronem IV</b></td><td><span class="pill" style="background:#e3f5f6;color:#0b5f67">Thông tin thuốc</span></td><td>Truyền nhiễm</td><td>Tài liệu hãng</td></tr>
+                </tbody>
+              </table>
+              <div class="note"><svg class="ico"><use href="#i-alert"/></svg>Nội dung chưa thẩm định lại · Không nhập dữ liệu người bệnh (NĐ 13/2023/NĐ-CP) · <u>Chi tiết</u></div>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+      <div class="mwrap"><p class="lbl">Điện thoại</p><div class="phone">
+        <div class="Am">
+          <div class="st"></div>
+          <div class="hd"><img src="../icons/icon.svg" alt=""><b>Cẩm nang Dược</b></div>
+          <div class="bd">
+            <h1>Hôm nay cần tra cứu gì?</h1>
+            <div class="search"><svg class="ico"><use href="#i-search"/></svg>Tên thuốc, bệnh, tổ chức…</div>
+            <div class="sugg"><span>Suy tim</span><span>Gram âm</span><span>AKI</span><span>Statin</span></div>
+            <p class="lbl" style="margin-top:4px">Đọc tiếp</p>
+            <div class="row"><i style="background:#eef0ff;color:#3730a3">KD</i><div><b>KDIGO AKI/AKD (dự thảo)</b><span>Guideline · Thận</span></div></div>
+            <div class="row"><i style="background:#eef0ff;color:#3730a3">EAU</i><div><b>EAU 2026 – Nhiễm khuẩn niệu</b><span>Guideline · Truyền nhiễm</span></div></div>
+            <div class="row"><i style="background:#e3f5f6;color:#0b5f67">Rx</i><div><b>Lipitor</b><span>Thông tin thuốc · Tim mạch</span></div></div>
+            <div class="row"><i style="background:#fff4e0;color:#8a4b06">VS</i><div><b>So sánh 5 PPI</b><span>So sánh · Tiêu hóa</span></div></div>
+          </div>
+          <div class="tab"><div class="on"><svg class="ico"><use href="#i-home"/></svg>Trang chủ</div><div><svg class="ico"><use href="#i-book"/></svg>Thư viện</div><div><svg class="ico"><use href="#i-search"/></svg>Tìm</div><div><svg class="ico"><use href="#i-star"/></svg>Yêu thích</div></div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ================= B ================= -->
+  <section class="opt" id="opt-B" hidden>
+    <div class="opt-head">
+      <div>
+        <h2>B. Bảng điều khiển lâm sàng</h2>
+        <p class="lead">Sidebar xanh đậm sang trọng, trang chủ dạng ô "bento": thẻ lớn "Đọc tiếp", 4 ô số liệu theo nhóm có màu riêng, danh sách mới cập nhật, đám chuyên khoa. Cảm giác một sản phẩm cao cấp.</p>
+        <div class="swatches">
+          <span class="sw"><i style="background:#0f2a5c"></i>Sidebar navy</span>
+          <span class="sw"><i style="background:#eef2f8"></i>Nền</span>
+          <span class="sw"><i style="background:linear-gradient(135deg,#164aa2,#0b7c86)"></i>Gradient logo</span>
+          <span class="sw"><i style="background:#5ee6d5"></i>Điểm sáng</span>
+        </div>
+      </div>
+      <div class="pc">
+        <div><h3>Điểm mạnh</h3><ul><li>Ấn tượng nhất, hợp trình chiếu và giới thiệu với lãnh đạo</li><li>Thấy ngay quy mô thư viện và cái mới</li><li>Màu nhóm giúp nhận diện tức thì</li></ul></div>
+        <div><h3>Đánh đổi</h3><ul><li>Nhiều thành phần hơn, khó bảo trì hơn A</li><li>Trên điện thoại phải cuộn nhiều hơn A</li></ul></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="dwrap"><p class="lbl">Máy tính · trang chủ</p><div class="scaler"><div class="desk">
+        <div class="B">
+          <aside class="sb">
+            <div class="brand"><img src="../icons/icon.svg" alt=""><div><b>Cẩm nang Dược lâm sàng</b><span>Khoa Dược – BV X</span></div></div>
+            <div class="k"><svg class="ico"><use href="#i-search"/></svg>Tìm tài liệu…</div>
+            <div class="it on"><svg class="ico"><use href="#i-grid"/></svg>Tổng quan</div>
+            <div class="it"><svg class="ico"><use href="#i-star"/></svg>Yêu thích<span class="n">1</span></div>
+            <div class="it"><svg class="ico"><use href="#i-clock"/></svg>Gần đây</div>
+            <div class="sec">Thư viện</div>
+            <div class="it"><svg class="ico" style="color:#a5b4fc"><use href="#i-book"/></svg>Tóm tắt guideline<span class="n">12</span></div>
+            <div class="it"><svg class="ico" style="color:#5ee6d5"><use href="#i-pill"/></svg>Thông tin thuốc<span class="n">3</span></div>
+            <div class="it"><svg class="ico" style="color:#fcd34d"><use href="#i-scale"/></svg>So sánh dược lý<span class="n">5</span></div>
+            <div class="it"><svg class="ico" style="color:#d8b4fe"><use href="#i-flask"/></svg>Thẩm định EBM<span class="n">2</span></div>
+            <div class="sec">Khác</div>
+            <div class="it"><svg class="ico"><use href="#i-info"/></svg>Giới thiệu &amp; lưu ý</div>
+            <div class="unit"><b>Khoa Dược – BV X</b>Danh mục v1.1.1 · 25/10/2026<br><span class="unv">Chưa thẩm định lại</span></div>
+          </aside>
+          <div class="main">
+            <div class="hdr"><div><h1>Tổng quan</h1><p>Chủ nhật, 25/10/2026 · 22 tài liệu</p></div><div class="s"><svg class="ico"><use href="#i-search"/></svg>Tìm thuốc, bệnh, guideline…<kbd>Ctrl K</kbd></div></div>
+            <div class="bento">
+              <div class="c hero"><div class="k2">Đọc tiếp</div><h2>KDIGO AKI/AKD<br>(dự thảo 03/2026)</h2><p>Chương 3–4: phòng ngừa, điều trị và AKI do thuốc · 22 khuyến cáo</p><div class="btn">Mở tiếp →</div><div class="tags"><span>Thận</span><span>Dự thảo</span></div></div>
+              <div class="c stat"><div class="ic" style="background:#eef0ff;color:#4f46e5"><svg class="ico"><use href="#i-book"/></svg></div><span class="go">Xem →</span><b>12</b><span>Tóm tắt guideline</span></div>
+              <div class="c stat"><div class="ic" style="background:#e3f5f6;color:#0b7c86"><svg class="ico"><use href="#i-pill"/></svg></div><span class="go">Xem →</span><b>3</b><span>Thông tin thuốc</span></div>
+              <div class="c stat"><div class="ic" style="background:#fff4e0;color:#d97706"><svg class="ico"><use href="#i-scale"/></svg></div><span class="go">Xem →</span><b>5</b><span>So sánh dược lý</span></div>
+              <div class="c stat"><div class="ic" style="background:#f3e8ff;color:#7c3aed"><svg class="ico"><use href="#i-flask"/></svg></div><span class="go">Xem →</span><b>2</b><span>Thẩm định EBM</span></div>
+              <div class="c wide"><h3>Mới cập nhật <small>Tất cả →</small></h3>
+                <div class="li"><i style="background:#eef0ff;color:#3730a3">KD</i><div><b>KDIGO AKI/AKD (dự thảo)</b><span>Guideline · Thận</span></div><em>25/10</em></div>
+                <div class="li"><i style="background:#eef0ff;color:#3730a3">EAU</i><div><b>EAU 2026 – Nhiễm khuẩn niệu khoa</b><span>Guideline · Truyền nhiễm</span></div><em>25/10</em></div>
+                <div class="li"><i style="background:#fff4e0;color:#8a4b06">VS</i><div><b>So sánh 5 PPI</b><span>So sánh · Tiêu hóa – Gan</span></div><em>17/10</em></div>
+                <div class="li"><i style="background:#e3f5f6;color:#0b5f67">Rx</i><div><b>Meronem IV</b><span>Thông tin thuốc · Truyền nhiễm</span></div><em>11/10</em></div>
+              </div>
+              <div class="c wide" style="grid-row:span 1"><h3>Theo chuyên khoa</h3><div class="chips"><span>Truyền nhiễm<b>7</b></span><span>Tim mạch<b>3</b></span><span>Nội tiết<b>2</b></span><span>Tiêu hóa – Gan<b>2</b></span><span>Sản khoa<b>2</b></span><span>Thận<b>1</b></span><span>Hô hấp<b>1</b></span><span>Huyết học<b>1</b></span><span>+3 khác</span></div></div>
+              <div class="c warn"><svg class="ico"><use href="#i-alert"/></svg><span>Nội dung các trang chưa thẩm định lại trong cổng; đối chiếu nguồn trước khi áp dụng. Cổng không nhập, không lưu dữ liệu người bệnh (NĐ 13/2023/NĐ-CP).</span></div>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+      <div class="mwrap"><p class="lbl">Điện thoại</p><div class="phone">
+        <div class="Bm">
+          <div class="top"><div class="r"><img src="../icons/icon.svg" alt=""><div><b>Cẩm nang Dược lâm sàng</b><small>Khoa Dược – BV X</small></div></div><div class="s"><svg class="ico"><use href="#i-search"/></svg>Tìm thuốc, bệnh, guideline…</div></div>
+          <div class="bd">
+            <div class="h"><small>Đọc tiếp</small><b>KDIGO AKI/AKD (dự thảo)</b><span>Chương 3–4 · 22 khuyến cáo</span></div>
+            <div class="t"><div class="ic" style="background:#eef0ff;color:#4f46e5"><svg class="ico"><use href="#i-book"/></svg></div><b>12</b><span>Guideline</span></div>
+            <div class="t"><div class="ic" style="background:#e3f5f6;color:#0b7c86"><svg class="ico"><use href="#i-pill"/></svg></div><b>3</b><span>Thông tin thuốc</span></div>
+            <div class="t"><div class="ic" style="background:#fff4e0;color:#d97706"><svg class="ico"><use href="#i-scale"/></svg></div><b>5</b><span>So sánh dược lý</span></div>
+            <div class="t"><div class="ic" style="background:#f3e8ff;color:#7c3aed"><svg class="ico"><use href="#i-flask"/></svg></div><b>2</b><span>Thẩm định EBM</span></div>
+          </div>
+          <div class="nav"><div class="on"><svg class="ico"><use href="#i-grid"/></svg>Tổng quan</div><div><svg class="ico"><use href="#i-book"/></svg>Thư viện</div><div><svg class="ico"><use href="#i-star"/></svg>Yêu thích</div><div><svg class="ico"><use href="#i-info"/></svg>Lưu ý</div></div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ================= C ================= -->
+  <section class="opt" id="opt-C" hidden>
+    <div class="opt-head">
+      <div>
+        <h2>C. Thư viện đọc</h2>
+        <p class="lead">Bố cục ba cột như ứng dụng đọc tài liệu: thanh biểu tượng, danh sách tài liệu của nhóm, và khung đọc lớn. Tiêu đề chữ có chân (Lora), nền giấy ấm, phần đầu tài liệu hiện rõ trạng thái và nguồn.</p>
+        <div class="swatches">
+          <span class="sw"><i style="background:#f7f4ee"></i>Nền giấy</span>
+          <span class="sw"><i style="background:#1d2433"></i>Mực đậm</span>
+          <span class="sw"><i style="background:#0b7c86"></i>Nhấn xanh ngọc</span>
+          <span class="sw"><i style="background:#3730a3"></i>Màu guideline</span>
+        </div>
+      </div>
+      <div class="pc">
+        <div><h3>Điểm mạnh</h3><ul><li>Đọc và chuyển tài liệu không rời trang (master–detail)</li><li>Trạng thái "dự thảo / chưa thẩm định" luôn trong tầm mắt</li><li>Sang trọng, mang tính học thuật</li></ul></div>
+        <div><h3>Đánh đổi</h3><ul><li>Khung đọc hẹp hơn trên màn 13 inch (nên cho thu gọn danh sách)</li><li>Trang chủ tổng quan nhẹ hơn A và B</li></ul></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="dwrap"><p class="lbl">Máy tính · đang đọc tài liệu</p><div class="scaler"><div class="desk">
+        <div class="C">
+          <nav class="rail"><img src="../icons/icon.svg" alt=""><div><svg class="ico"><use href="#i-home"/></svg></div><div class="on"><svg class="ico"><use href="#i-book"/></svg></div><div><svg class="ico"><use href="#i-pill"/></svg></div><div><svg class="ico"><use href="#i-scale"/></svg></div><div><svg class="ico"><use href="#i-flask"/></svg></div><div><svg class="ico"><use href="#i-star"/></svg></div><div class="sp"></div><div><svg class="ico"><use href="#i-info"/></svg></div></nav>
+          <div class="list">
+            <div class="lh"><small>Thư viện · Khoa Dược – BV X</small><h2>Tóm tắt guideline</h2>
+              <div class="seg"><span class="on">Tất cả 12</span><span>2026</span><span>Yêu thích</span></div>
+              <div class="ls"><svg class="ico"><use href="#i-search"/></svg>Lọc trong 12 guideline…</div></div>
+            <div class="chips"><span class="on">Tất cả</span><span>Truyền nhiễm</span><span>Tim mạch</span><span>Thận</span><span>Nội tiết</span></div>
+            <div class="items">
+              <div class="itm"><span class="mono" style="background:#eef0ff;color:#3730a3">ACG</span><div><b>ACG 2026 – Xơ gan dự phòng</b><span>2026 · Tiêu hóa – Gan</span></div></div>
+              <div class="itm"><span class="mono" style="background:#eef0ff;color:#3730a3">EAU</span><div><b>EAU 2026 – Nhiễm khuẩn niệu khoa</b><span>2026 · Truyền nhiễm</span></div></div>
+              <div class="itm"><span class="mono" style="background:#eef0ff;color:#3730a3">ESC</span><div><b>ESC 2026 – Suy tim</b><span>2026 · Tim mạch</span></div></div>
+              <div class="itm"><span class="mono" style="background:#eef0ff;color:#3730a3">IDSA</span><div><b>IDSA 2026 – Gram âm kháng thuốc</b><span>2026 · Truyền nhiễm</span></div></div>
+              <div class="itm on"><span class="mono" style="background:#3730a3;color:#fff">KD</span><div><b>KDIGO AKI/AKD (dự thảo 03/2026)</b><span>2026 · Thận · Dự thảo</span></div></div>
+              <div class="itm"><span class="mono" style="background:#eef0ff;color:#3730a3">GINA</span><div><b>GINA 2026 – Hen (chương 3–4)</b><span>2026 · Hô hấp</span></div></div>
+            </div>
+          </div>
+          <div class="read">
+            <div class="rh"><small>Tóm tắt guideline · KDIGO</small><h1>KDIGO AKI/AKD (dự thảo 03/2026) – Chương 3 và 4</h1>
+              <div class="meta"><span class="b" style="background:#fdf0cc;color:#6b4b06">Dự thảo lấy ý kiến</span><span class="b" style="background:#fde2e2;color:#8b1d1d">Chưa thẩm định lại</span><span class="b" style="background:#eef0ea;color:#4b5446">Cập nhật 25/10/2026</span>
+                <div class="act"><span><svg class="ico"><use href="#i-star"/></svg>Lưu</span><span><svg class="ico"><use href="#i-print"/></svg>In</span><span class="pri"><svg class="ico"><use href="#i-ext"/></svg>Toàn màn hình</span></div></div></div>
+            <div class="paper">
+              <div class="tabsx"><span class="on">Khuyến cáo</span><span>Ma trận</span><span>Không nhất quán</span><span>Cần thẩm định</span><span>Tình huống</span></div>
+              <table><thead><tr><th>#</th><th>Nhóm</th><th>Mức KC</th><th>Mức CC</th><th>Nội dung</th></tr></thead>
+                <tbody><tr><td>1</td><td colspan="4" style="color:#b0a690">— Nội dung trang gốc hiển thị tại đây (khung đọc, không đổi nội dung) —</td></tr>
+                <tr><td>2</td><td colspan="4" style="color:#b0a690">…</td></tr><tr><td>3</td><td colspan="4" style="color:#b0a690">…</td></tr></tbody></table>
+              <p class="cap">Trang gốc nhúng nguyên vẹn; phần đầu tài liệu (tiêu đề, trạng thái, thao tác) do cổng hiển thị.</p>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+      <div class="mwrap"><p class="lbl">Điện thoại · danh sách</p><div class="phone">
+        <div class="Cm">
+          <div class="hd"><img src="../icons/icon.svg" alt=""><h2>Tóm tắt guideline</h2></div>
+          <div class="seg"><span class="on">Guideline</span><span>Thuốc</span><span>So sánh</span><span>EBM</span></div>
+          <div class="ls"><svg class="ico"><use href="#i-search"/></svg>Lọc trong 12 guideline…</div>
+          <div class="items">
+            <div class="itm"><span class="mono" style="width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:10px;font-weight:800;background:#eef0ff;color:#3730a3">ACG</span><div><b>ACG 2026 – Xơ gan dự phòng</b><span>Tiêu hóa – Gan</span></div><svg class="ico chev"><use href="#i-right"/></svg></div>
+            <div class="itm"><span class="mono" style="width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:10px;font-weight:800;background:#eef0ff;color:#3730a3">EAU</span><div><b>EAU 2026 – Nhiễm khuẩn niệu</b><span>Truyền nhiễm</span></div><svg class="ico chev"><use href="#i-right"/></svg></div>
+            <div class="itm"><span class="mono" style="width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:10px;font-weight:800;background:#eef0ff;color:#3730a3">ESC</span><div><b>ESC 2026 – Suy tim</b><span>Tim mạch</span></div><svg class="ico chev"><use href="#i-right"/></svg></div>
+            <div class="itm"><span class="mono" style="width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:10px;font-weight:800;background:#3730a3;color:#fff">KD</span><div><b>KDIGO AKI/AKD (dự thảo)</b><span>Thận · Dự thảo</span></div><svg class="ico chev"><use href="#i-right"/></svg></div>
+            <div class="itm"><span class="mono" style="width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:10px;font-weight:800;background:#eef0ff;color:#3730a3">GINA</span><div><b>GINA 2026 – Hen</b><span>Hô hấp</span></div><svg class="ico chev"><use href="#i-right"/></svg></div>
+            <div class="itm"><span class="mono" style="width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:10px;font-weight:800;background:#eef0ff;color:#3730a3">IDSA</span><div><b>IDSA 2026 – Gram âm</b><span>Truyền nhiễm</span></div><svg class="ico chev"><use href="#i-right"/></svg></div>
+          </div>
+          <div class="tab"><div><svg class="ico"><use href="#i-home"/></svg>Trang chủ</div><div class="on"><svg class="ico"><use href="#i-book"/></svg>Thư viện</div><div><svg class="ico"><use href="#i-search"/></svg>Tìm</div><div><svg class="ico"><use href="#i-star"/></svg>Yêu thích</div></div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="box" style="margin-top:22px">
+    <h2>So sánh nhanh</h2>
+    <table class="cmp">
+      <thead><tr><th></th><th>A. Tĩnh &amp; Tập trung</th><th>B. Bảng điều khiển</th><th>C. Thư viện đọc</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mạnh nhất ở</b></td><td>Tra cứu nhanh tại giường bệnh</td><td>Ấn tượng, trình chiếu, giới thiệu</td><td>Đọc sâu, chuyển tài liệu liên tục</td></tr>
+        <tr><td><b>Trang chủ</b></td><td>Ô tìm lớn + bảng thư viện</td><td>Bento: đọc tiếp, số liệu, mới cập nhật</td><td>Nhẹ; vào thẳng danh sách nhóm</td></tr>
+        <tr><td><b>Khi đọc tài liệu</b></td><td>Thanh tiêu đề mảnh + nhãn trạng thái</td><td>Thanh tiêu đề + nhãn trạng thái</td><td>Phần đầu tài liệu lớn, danh sách luôn bên cạnh</td></tr>
+        <tr><td><b>Điện thoại</b></td><td>Thanh dưới 4 mục, tìm ngay đầu trang</td><td>Đầu trang gradient, thanh dưới nổi</td><td>Danh sách → bấm vào để đọc</td></tr>
+        <tr><td><b>Khối lượng sửa</b></td><td>Vừa</td><td>Lớn nhất</td><td>Vừa – lớn</td></tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<script>
+  // Thu phóng khung máy tính 1200×740 cho vừa bề ngang.
+  function fit() {
+    document.querySelectorAll('.scaler').forEach(function (s) {
+      var d = s.querySelector('.desk'); var k = s.clientWidth / 1200;
+      d.style.transform = 'scale(' + k + ')'; s.style.height = (740 * k) + 'px';
+    });
+    document.querySelectorAll('.phone').forEach(function (p) {
+      var w = p.parentElement.parentElement.clientWidth;
+      var k = Math.min(1, (w - 4) / 395);
+      p.style.transform = k < 1 ? 'scale(' + k + ')' : ''; p.style.transformOrigin = '0 0';
+      p.parentElement.style.height = k < 1 ? (780 * k + 4) + 'px' : '';
+    });
+  }
+  document.querySelectorAll('.tabs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.tabs button').forEach(function (x) { x.setAttribute('aria-selected', String(x === b)); });
+      document.querySelectorAll('.opt').forEach(function (o) { o.hidden = o.id !== 'opt-' + b.dataset.o; });
+      fit();
+    });
+  });
+  window.addEventListener('resize', fit);
+  fit();
+</script>
+</body>
+</html>

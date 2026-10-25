@@ -10,23 +10,25 @@ Cổng tra cứu tài liệu dược lâm sàng của **Khoa Dược – BV X**:
 
 ## Tính năng
 
-- Sidebar trái: Trang chủ, Yêu thích, 4 nhóm tài liệu (đếm số lượng), mục "Xem gần đây", danh sách tài liệu theo nhóm thu/mở được.
-- Máy tính: thu gọn sidebar thành thanh biểu tượng (`Ctrl+B`). Điện thoại: sidebar thành ngăn kéo trượt.
-- Tìm kiếm không phân biệt dấu (`/` hoặc `Ctrl+K`, `Enter` mở kết quả đầu tiên), tô sáng từ khoá.
-- Khung xem tài liệu: tài liệu trước/sau trong nhóm (`Alt+←/→`), ghim yêu thích, mở tab mới.
-- Lọc theo chuyên khoa ở trang chủ.
+Giao diện theo mẫu **A. Tĩnh & Tập trung** (duyệt 25/10/2026; bản xem trước 3 mẫu ở `design/de-xuat-ui-ux.html`).
+
+- **Sidebar trái dạng cây:** Trang chủ, Gần đây, Yêu thích; mục Thư viện có 4 nhóm (chấm màu riêng, số lượng), mỗi nhóm mở ra danh sách tài liệu. Máy tính thu gọn thành thanh biểu tượng (`Ctrl+B`); điện thoại là ngăn kéo trượt.
+- **Trang chủ tìm trước:** ô tìm lớn lọc thư viện tức thì, không phân biệt dấu, tô sáng từ khoá; gợi ý nhanh; "Đọc tiếp" 3 tài liệu gần nhất; thư viện dạng bảng (tài liệu, nhóm, chuyên khoa, nguồn, ghim).
+- **Tìm nhanh `Ctrl+K`** ở mọi màn hình: chọn bằng `↑ ↓`, `Enter` mở, `Esc` đóng; trên điện thoại mở toàn màn hình.
+- **Điện thoại:** thanh dưới 4 mục (Trang chủ, Thư viện, Tìm, Yêu thích).
+- **Khung đọc:** thanh trạng thái luôn hiện "Chưa thẩm định lại", "Dự thảo" (nếu có) và nguồn; tài liệu trước/sau trong nhóm (`Alt+←/→`), ghim, mở tab mới.
 - Giao diện sáng/tối/theo hệ thống; màu nhấn theo đơn vị đặt trong `css/themes.css` (hiện là BV X).
+- PWA: cài như ứng dụng, lưu sẵn các trang để đọc khi mất mạng, báo khi có bản cập nhật.
 
 ## Logo
 
 Cuốn sách mở (cẩm nang, kiến thức có nguồn) và viên nang nghiêng phía trên (dược), trên nền chuyển màu xanh dương → xanh ngọc (tin cậy, chăm sóc lâm sàng). Logo vẽ bằng mã trong `tools/make-icons.js`; sửa hình học ở đó rồi chạy `node tools/make-icons.js` để sinh lại SVG và PNG.
-- PWA: cài như ứng dụng, lưu sẵn 20 trang để đọc khi mất mạng, báo khi có bản cập nhật.
 
 ## Cấu trúc
 
 ```
 index.html               khung ứng dụng (sidebar + vùng nội dung)
-css/base.css             token và bố cục lõi ClinPharmAI
+css/base.css             token, màu nhóm và bố cục (mẫu A)
 css/themes.css           màu nhấn theo đơn vị
 js/lib.js                hàm thuần (tìm kiếm, định tuyến...) – có ca kiểm thử
 js/app.js                giao diện, sự kiện, service worker
