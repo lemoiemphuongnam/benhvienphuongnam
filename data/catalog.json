@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-10-25",
+  "source": "1. Lê Mới Em. Danh mục tài liệu ClinPharmAI (20 trang HTML trong thư mục pages/). Khoa Dược, BVĐK Phương Nam; 2026. Tiêu đề lấy nguyên văn từ thẻ <title> của từng trang.",
+  "status": "unverified",
+  "groups": [
+    { "id": "guideline", "label": "Tóm tắt guideline", "icon": "book" },
+    { "id": "thuoc", "label": "Thông tin thuốc", "icon": "pill" },
+    { "id": "so-sanh", "label": "So sánh dược lý", "icon": "scale" },
+    { "id": "ebm", "label": "Thẩm định EBM", "icon": "flask" }
+  ],
+  "records": [
+    { "id": "acg-2026-xo-gan", "group": "guideline", "label": "ACG 2026 – Xơ gan dự phòng", "org": "ACG", "year": 2026, "specialty": "Tiêu hóa – Gan", "file": "ACG-2026-xo-gan-du-phong-tom-tat.html", "title": "ACG 2026 – Chăm sóc dự phòng cho người bệnh xơ gan" },
+    { "id": "acr-2026-oa", "group": "guideline", "label": "ACR 2026 – Thoái hóa khớp", "org": "ACR", "year": 2026, "specialty": "Cơ xương khớp", "file": "acr-2026-osteoarthritis.html", "title": "2026 ACR Osteoarthritis Guideline - Visual Clinical Hub" },
+    { "id": "ada-easd-2026-dtd2", "group": "guideline", "label": "ADA/EASD 2026 – Đái tháo đường típ 2", "org": "ADA/EASD", "year": 2026, "specialty": "Nội tiết", "file": "ada-easd-2026-dai-thao-duong-tip-2.html", "title": "Đồng Thuận ADA/EASD 2026 - Quản Lý Đái Tháo Đường Típ 2" },
+    { "id": "aha-2026-ckm", "group": "guideline", "label": "AHA/ACC/ADA/ASN 2026 – Hội chứng CKM", "org": "AHA/ACC/ADA/ASN", "year": 2026, "specialty": "Tim mạch – Thận – Chuyển hóa", "file": "aha-acc-ada-ckm-syndrome-2026.html", "title": "2026 AHA/ACC/ADA/ASN CKM Syndrome Guideline - Visual Clinical Hub" },
+    { "id": "ash-2026-thieu-sat", "group": "guideline", "label": "ASH 2026 – Thiếu sắt", "org": "ASH", "year": 2026, "specialty": "Huyết học", "file": "ash-2026-iron-deficiency.html", "title": "2026 ASH Iron Deficiency Guideline - Visual Clinical Hub" },
+    { "id": "esc-2026-suy-tim", "group": "guideline", "label": "ESC 2026 – Suy tim", "org": "ESC", "year": 2026, "specialty": "Tim mạch", "file": "cap-nhat-esc-2026-suy-tim.html", "title": "ESC Heart Failure Guidelines - Infographic & Analytics Dashboard" },
+    { "id": "gina-2026-hen", "group": "guideline", "label": "GINA 2026 – Hen (chương 3–4)", "org": "GINA", "year": 2026, "specialty": "Hô hấp", "file": "GINA-2026-Ch3-4-tom-tat.html", "title": "GINA 2026 – Điều trị hen người lớn, thanh thiếu niên và trẻ 6–11 tuổi" },
+    { "id": "dtd-2023-2026", "group": "guideline", "label": "Đái tháo đường 2023–2026 – Bảo vệ cơ quan", "org": "Tổng hợp", "year": 2026, "specialty": "Nội tiết", "file": "guideline-dai-thao-duong-2023-2026.html", "title": "Bảo vệ cơ quan thay dần HbA1c trong guideline đái tháo đường 2023–2026" },
+    { "id": "idsa-2026-gram-am", "group": "guideline", "label": "IDSA 2026 – Gram âm kháng thuốc", "org": "IDSA", "year": 2026, "specialty": "Truyền nhiễm", "file": "idsa-2026-gram-am-khang-thuoc.html", "title": "Hướng dẫn IDSA 2026: Phác đồ Kháng sinh Ưu tiên & Thay thế" },
+    { "id": "ssti-s-aureus", "group": "guideline", "label": "Nhiễm trùng da mô mềm do S. aureus", "org": "Infographic", "year": null, "specialty": "Truyền nhiễm", "file": "nhiem-trung-da-mo-mem-staphylococcus-aureus.html", "title": "Infographic: Chẩn Đoán & Điều Trị Nhiễm Trùng Da do S. aureus (SSTIs)" },
+    { "id": "bexsero", "group": "thuoc", "label": "Bexsero", "org": "Tài liệu thông tin thuốc", "year": null, "specialty": "Vắc xin", "file": "Bexsero_Tai_lieu_thong_tin_thuoc.html", "title": "Bexsero – Tài liệu thông tin thuốc" },
+    { "id": "lipitor", "group": "thuoc", "label": "Lipitor", "org": "Tài liệu thông tin thuốc", "year": null, "specialty": "Tim mạch", "file": "Lipitor_Tai_lieu_thong_tin_thuoc.html", "title": "Lipitor - Tài liệu thông tin thuốc" },
+    { "id": "meronem-iv", "group": "thuoc", "label": "Meronem IV", "org": "Tài liệu thông tin thuốc", "year": null, "specialty": "Truyền nhiễm", "file": "Meronem_IV_Tai_lieu_thong_tin_thuoc.html", "title": "Meronem IV - Tài liệu thông tin thuốc" },
+    { "id": "ss-carbapenem", "group": "so-sanh", "label": "Carbapenem", "org": "ClinPharmAI", "year": null, "specialty": "Truyền nhiễm", "file": "so-sanh-carbapenem-duoc-ly-lam-sang.html", "title": "So sánh Carbapenem – Dược lý lâm sàng" },
+    { "id": "ss-fluoroquinolon", "group": "so-sanh", "label": "Fluoroquinolon", "org": "ClinPharmAI", "year": null, "specialty": "Truyền nhiễm", "file": "so-sanh-fluoroquinolon-duoc-ly-lam-sang.html", "title": "So sánh Ciprofloxacin – Levofloxacin – Moxifloxacin" },
+    { "id": "ss-macrolid", "group": "so-sanh", "label": "Macrolid", "org": "ClinPharmAI", "year": null, "specialty": "Truyền nhiễm", "file": "so-sanh-macrolid-duoc-ly-lam-sang.html", "title": "ClinPharmAI · So sánh macrolid" },
+    { "id": "ss-ppi", "group": "so-sanh", "label": "Ức chế bơm proton (5 PPI)", "org": "ClinPharmAI", "year": null, "specialty": "Tiêu hóa – Gan", "file": "so-sanh-ppi-duoc-ly-lam-sang.html", "title": "ClinPharmAI | So sánh 5 PPI" },
+    { "id": "ss-statin", "group": "so-sanh", "label": "Statin (7 thuốc)", "org": "ClinPharmAI", "year": null, "specialty": "Tim mạch", "file": "statin-7-so-sanh-duoc-ly-lam-sang.html", "title": "Dược lý lâm sàng so sánh 7 statin: tra cứu, quy đổi liều và lựa chọn theo tình huống" },
+    { "id": "ebm-azithro-jama-2026", "group": "ebm", "label": "Azithromycin mổ lấy thai (JAMA 2026)", "org": "JAMA", "year": 2026, "specialty": "Sản khoa", "file": "azithromycin-du-phong-mo-lay-thai.html", "title": "Infographic Thẩm Định Y Khoa: Azithromycin Trong Mổ Lấy Thai Ngoài Kế Hoạch (JAMA 2026)" },
+    { "id": "ebm-kuitunen-bjog-2024", "group": "ebm", "label": "Kuitunen BJOG 2024 (SR)", "org": "BJOG", "year": 2024, "specialty": "Sản khoa", "file": "bjog-azithromycin-sr-journal.html", "title": "Kuitunen BJOG 2024 – Thẩm định EBM" }
+  ]
+}
