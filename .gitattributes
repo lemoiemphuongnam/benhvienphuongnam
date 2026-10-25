@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+# Trang gốc: giữ nguyên từng byte, không chuẩn hoá xuống dòng
+pages/** -text
